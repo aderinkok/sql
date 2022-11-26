@@ -45,7 +45,3 @@ Aþaðýdaki tüm ifadeler ogrenci tablosu içindir:
 42- Bolum degeri Bilgisayar veya Muhasebe olan kayýtlarý bolum sütununa göre gruplayýnýz  ve  her bölümde kaç kiþi olduðunu listeleyiniz.
 43- Her bir dogum_yeri deðerinde kaç kayýt olduðunu "Kiþi" kolon adýyla , dogum_yeri kolonunu "Memleket" kolon adýyla ancak kayýt sayýsý ("Kiþi" takma adlý kolon deðeri) 3 veya üstü bir deðerde ise listeleyiniz.
 */
-SELECT * from ogrenci where (yas<20 and dogum_yeri ='Malatya' and ortalama >64) or ortalama<55
-SELECT * from ogrenci where yas<20 and dogum_yeri ='Malatya' or (yas=21 and ortalama>80)
-SELECT * from ogrenci where (ortalama >64 or ortalama<55)
-SELECT * from ogrenci where ortalama between 61 and 79 
