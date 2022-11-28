@@ -67,4 +67,5 @@ SELECT ad,soyad FROM ogrenci ORDER BY ad
 --5
 SELECT ad,soyad FROM ogrenci ORDER BY soyad DESC
 
+--6
 
