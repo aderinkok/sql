@@ -45,3 +45,26 @@ Aþaðýdaki tüm ifadeler ogrenci tablosu içindir:
 42- Bolum degeri Bilgisayar veya Muhasebe olan kayýtlarý bolum sütununa göre gruplayýnýz  ve  her bölümde kaç kiþi olduðunu listeleyiniz.
 43- Her bir dogum_yeri deðerinde kaç kayýt olduðunu "Kiþi" kolon adýyla , dogum_yeri kolonunu "Memleket" kolon adýyla ancak kayýt sayýsý ("Kiþi" takma adlý kolon deðeri) 3 veya üstü bir deðerde ise listeleyiniz.
 */
+
+/*Cevaplar*/
+
+USE Ornek  --Komutlar çalýþmazsa üzerinde iþlem yapýlacak veritabanýna geçiþ yapýlmalýdýr.
+
+
+--1
+SELECT * FROM ogrenci
+
+--2
+SELECT MAX(ortalama) FROM ogrenci WHERE dogum_yeri='Malatya'
+
+--3
+SELECT MAX(ortalama) [En Yüksek] FROM ogrenci WHERE dogum_yeri='Bilecik'
+
+--4
+SELECT ad,soyad FROM ogrenci ORDER BY ad ASC
+SELECT ad,soyad FROM ogrenci ORDER BY ad 
+
+--5
+SELECT ad,soyad FROM ogrenci ORDER BY soyad DESC
+
+--6
