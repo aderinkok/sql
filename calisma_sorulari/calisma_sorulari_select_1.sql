@@ -47,7 +47,7 @@ Aþaðýdaki tüm ifadeler ogrenci tablosu içindir:
 43- Her bir dogum_yeri deðerinde kaç kayýt olduðunu "Kiþi" kolon adýyla , dogum_yeri kolonunu "Memleket" kolon adýyla ancak kayýt sayýsý ("Kiþi" takma adlý kolon deðeri) 3 veya üstü bir deðerde ise listeleyiniz.
 */
 
-/* ---Cevaplar--- */
+/*Cevaplar*/
 
 USE Ornek  --Komutlar çalýþmazsa üzerinde iþlem yapýlacak veritabanýna geçiþ yapýlmalýdýr.
 
