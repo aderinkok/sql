@@ -24,4 +24,43 @@ NOT: Eðer kolon deðeri NOT NULL þeklinde ayarlanmýþ ise mutlaka deðer girilmelid
 NOT2: Otomatik artan Identity/Primary Key olarak belirlenmiþ kolonlara deðer giriþi yapýlmaz.
 NOT3: T-SQL'de tek INSERT ifadesi ile en fazla 1000 satýr veri eklenebilmektedir.
 
+
+
+ - ogrenciler tablosu
+
+| id | ad            | soyad      | sinif | vize | final |
+|  1 | Ali           | Yýlmaz     |  1    | 65   | 82    |
+|  2 | Ahmet         | Mutlu      |  1    | 30   | 45    |
+|  3 | Asel Sare     | Aygün      |  2    | 85   | 79    |
+|  4 | Ayþe          | Demir      |  2    | 55   | 63    |
+|  5 | Abdulmelik    | Derinkök   |  2    | 100  | 100   |
+|  6 | Muhammed Yaðýz| Mutlu      |  2    | 95   | 68    |
+|  7 | Elif Eylül    | Mutlu      |  2    | 90   | 90    |
+
+
+*/
+
+--Örnek - 1
+INSERT ogrenciler VALUES('Uður','Erdem',1,68,92)
+
+-- Örnek - 1 Çýktý
+/*
+
+(1 row affected)
+ -- Tablo olarak çýktý vermez ancak bilgi mesajý olarak etkilenen satýr sayýsýný yazdýrýr.
+
+ Ýþlemden sonra ogrenciler tablosu:
+
+| id | ad            | soyad      | sinif | vize | final |
+|  1 | Ali           | Yýlmaz     |  1    | 65   | 82    |
+|  2 | Ahmet         | Mutlu      |  1    | 30   | 45    |
+|  3 | Asel Sare     | Aygün      |  2    | 85   | 79    |
+|  4 | Ayþe          | Demir      |  2    | 55   | 63    |
+|  5 | Abdulmelik    | Derinkök   |  2    | 100  | 100   |
+|  6 | Muhammed Yaðýz| Mutlu      |  2    | 95   | 68    |
+|  7 | Elif Eylül    | Mutlu      |  2    | 68   | 92    |
+|  8 | Uður          | Erdem      |  1    | 90   | 90    |
+
+
+
 */
