@@ -27,13 +27,24 @@
 24- Adý Laura olan çalýþanýn adres, þehir ve ülke bilgisini ayný sütunda Adres takma adý ile listeleyin.[Çalýþan tablosu = Employees]
 25- Þehir bilgisi London, Madrid ve Buenos Aires olan ve Fax numarasý bulunan müþterileri listeleyin.[Müþteri tablosu = Customers]
 
+-- JOIN
+
+A- Ýlgili tablolardaki eþleþtirilecek alanlarý tablolarý inceleyerek tespit ediniz.
+B- Products tablosunda ProductName, Categories tablosunda CategoryName alanlarýný listeleyiniz.
+C- Her iki tablodaki tüm verileri listeleyiniz.
+26- Products tablosu (p takma adý ile) ile Categories (c takma adý ile) tablosunu  Inner Join yapýsý kullanarak birleþtirin.
+27- Products tablosu (p takma adý ile) ile Categories (c takma adý ile) tablosunu  LEFT Join yapýsý kullanarak birleþtirin.
+28- Products tablosu (p takma adý ile) ile Categories (c takma adý ile) tablosunu  RIGHT Join yapýsý kullanarak birleþtirin.
+29- Products tablosu (p takma adý ile) ile Categories (c takma adý ile) tablosunu  FULL Join yapýsý kullanarak birleþtirin.
+30- Products tablosu (p takma adý ile) ile Categories (c takma adý ile) tablosunu  CROSS Join yapýsý kullanarak birleþtirin.
+
 */
 
 USE Northwind --Komutlar çalýþmazsa üzerinde iþlem yapýlacak veritabanýna geçiþ yapýlmalýdýr.
 
 /* ---Cevaplar--- */
 --1
-SELECT * FROM Employees
+SELECT * FROM Employees 
 
 --2
 SELECT * FROM Customers
@@ -108,3 +119,19 @@ SELECT Address+' '+ City+' '+ Country Adres FROM Employees Where FirstName='Laur
 --25
 SELECT * FROM Customers WHERE City IN('London','Madrid','Buenos Aires') AND Fax IS NOT NULL
 
+
+
+--26
+SELECT p.ProductName, c.CategoryName FROM Products p INNER JOIN Categories c ON p.CategoryID = c.CategoryID 
+
+--27
+SELECT p.ProductName, c.CategoryName FROM Products p LEFT JOIN Categories c ON p.CategoryID = c.CategoryID 
+
+--28
+SELECT p.ProductName, c.CategoryName FROM Products p RIGHT JOIN Categories c ON p.CategoryID = c.CategoryID 
+
+--29
+SELECT p.ProductName, c.CategoryName FROM Products p FULL JOIN Categories c ON p.CategoryID = c.CategoryID 
+
+--30
+SELECT p.ProductName, c.CategoryName FROM Products p CROSS JOIN Categories c
