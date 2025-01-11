@@ -46,7 +46,7 @@ NOT-2: Kolonlarda deðer bulunmayan kayýtlarýn ilgili kolon deðeri boþ olacaktýr.
 
 5- Her iki tabloda yer alan tüm kolonlarý listeleyen ve yalnýzca eþleþen INNER JOIN komutunu yazýnýz.
 6- ogrenci tablosundaki tüm kayýtlarý listelemek koþulu ile ogrenci_detay tablosu ile birleþtirerek, iki tablonun tüm kolonlarýný (eþleþen veya eþleþmeyen veriler) INNER listeleyiniz.
-7- ogrenci tablosundaki tüm kayýtlarý listelemek koþulu ile ogrenci_detay tablosu ile birleþtirerek, iki tablonun tüm kolonlarýný (yalnýzca eþleþen veriler) listeleyiniz.
+7- ogrenci tablosundaki kayýtlarý ogrenci_detay tablosu ile birleþtirerek, iki tablonun tüm kolonlarýný (yalnýzca eþleþen veriler) listeleyiniz.
 8- ogrenci tablosundaki tüm kayýtlarý  listelemek koþulu ile ogrenci_detay tablosu ile birleþtirerek, iki tablonun tüm kolonlarýný (eþleþen veya eþleþmeyen veriler) FULL JOIN listeleyiniz.
 9- ogrenci tablosundaki dogum_yeri kolonundaki deðeri "Afyon" olan kayýtlarýn dogum_yeri kolon deðerini "Afyonkarahisar" olarak güncelleyiniz.
 10-ogrenci_detay tablosundaki bolum kolonunda "Tek." ve "Kod." ifadeleri bulunan kayýtlarýn  bolum deðerlerini sýrasýyla "Ýnternet ve Að Teknolojileri" ve "Web Tasarým ve Kodlama" olarak güncelleniyiniz.
@@ -146,9 +146,11 @@ INSERT ogrenci_detay (ogrenci_id,bolum,sinif) VALUES(15,'Web Tasarým ve Kod.',1)
 SELECT * FROM ogrenci INNER JOIN ogrenci_detay ON ogrenci.id=ogrenci_detay.ogrenci_id
 
 --6
+
 SELECT * FROM ogrenci LEFT JOIN ogrenci_detay ON ogrenci.id=ogrenci_detay.ogrenci_id
 
 --7
+--NOT: INNER JOIN sorgusuda kullanýlabilirdi. 
 SELECT * FROM ogrenci RIGHT JOIN ogrenci_detay ON ogrenci.id=ogrenci_detay.ogrenci_id
 
 --8
