@@ -1,40 +1,40 @@
-
+ï»¿
 use Northwind
 select * from Employees
 
 
 
---1- Tüm kayýtlarý listeleyin.
+--1- TÃ¼m kayÄ±tlarÄ± listeleyin.
 SELECT * FROM Employees
 
---2- Yalnýzca FirstName ve LastName sütunlarýný görüntüleyerek tüm kayýtlarý listeleyin.
+--2- YalnÄ±zca FirstName ve LastName sÃ¼tunlarÄ±nÄ± gÃ¶rÃ¼ntÃ¼leyerek tÃ¼m kayÄ±tlarÄ± listeleyin.
 SELECT FirstName, LastName FROM Employees
 
 
 
---3- Ýlk 5 kaydý listeleyin (TOP ile)
+--3- Ä°lk 5 kaydÄ± listeleyin (TOP ile)
 SELECT TOP 5 * FROM Employees
 
---4- TitleOCourtesy sütunundaki verileri benzersiz olarak listeleyin.
+--4- TitleOCourtesy sÃ¼tunundaki verileri benzersiz olarak listeleyin.
 SELECT DISTINCT TitleOfCourtesy FROM Employees
 
 
---5- KayýtlarýLastName kolonuna göre sýralayýn.
+--5- KayÄ±tlarÄ±LastName kolonuna gÃ¶re sÄ±ralayÄ±n.
 SELECT * FROM Employees ORDER BY LastName
 
 
---6- Kayýtlarý LastName kolonuna göre azalan sýralayýn.
+--6- KayÄ±tlarÄ± LastName kolonuna gÃ¶re azalan sÄ±ralayÄ±n.
 SELECT * FROM Employees ORDER BY LastName DESC
 
 
---7- ID kolonu 4'ten büyük olan kolonlarý listeleyin.
+--7- ID kolonu 4'ten bÃ¼yÃ¼k olan kolonlarÄ± listeleyin.
 SELECT * FROM Employees WHERE EmployeeID>4
 
---8- FirstName kolonu Anne olan kayýtlarý listeleyin.
+--8- FirstName kolonu Anne olan kayÄ±tlarÄ± listeleyin.
 SELECT * FROM Employees WHERE FirstName='Anne'
 
---9- LastName Davolio ve FirstName Anne olan kayýtlarý listeleyin.
+--9- LastName Davolio ve FirstName Anne olan kayÄ±tlarÄ± listeleyin.
 SELECT * FROM Employees WHERE LastName='Davolio' AND FirstName='Anne'
 
---10- LastName Davolio veya FirstName Anne olan kayýtlarý listeleyin.
+--10- LastName Davolio veya FirstName Anne olan kayÄ±tlarÄ± listeleyin.
 SELECT * FROM Employees WHERE LastName='Davolio' OR FirstName='Anne'

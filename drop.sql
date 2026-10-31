@@ -1,4 +1,4 @@
---syntax
+ï»¿--syntax
 
 DROP [TUR] [NESNE_ADI]
 
@@ -6,7 +6,7 @@ DROP [TUR] [NESNE_ADI]
 -- DROP TABLE - 1
 DROP TABLE personel
 
-/* DROP TABLE - 1 - ÇIKTI
+/* DROP TABLE - 1 - Ã‡IKTI
 Commands completed successfully.
 
 personel isimli tabloyu siler.
@@ -16,8 +16,8 @@ personel isimli tabloyu siler.
 
 DROP DATABASE Yeni
 
-/* DROP DATABASE - 1 - ÇIKTI
+/* DROP DATABASE - 1 - Ã‡IKTI
 Commands completed successfully.
 
-Yeni isimli veritabanýný siler.
+Yeni isimli veritabanÄ±nÄ± siler.
 */

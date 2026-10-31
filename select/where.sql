@@ -1,65 +1,65 @@
--- Syntax 
-SELECT [KOLONLAR] FROM [TABLO_ADI] WHERE [KOÞUL]
-SELECT [KOLONLAR] FROM [TABLO_ADI] WHERE [KOÞUL] AND [KOÞUL2]
-SELECT [KOLONLAR] FROM [TABLO_ADI] WHERE [KOÞUL] OR [KOÞUL2]
+ï»¿-- Syntax 
+SELECT [KOLONLAR] FROM [TABLO_ADI] WHERE [KOÅžUL]
+SELECT [KOLONLAR] FROM [TABLO_ADI] WHERE [KOÅžUL] AND [KOÅžUL2]
+SELECT [KOLONLAR] FROM [TABLO_ADI] WHERE [KOÅžUL] OR [KOÅžUL2]
 
--- Birden fazla koþul belirtmek için "AND" ya da "OR" kullanýlýr.
--- WHERE ifadesi ile istenildiði kadar koþul belirtilebilir.
--- AND kullanýmýnda belirtilen koþullarýn tümünü saðlayan kayýtlar getirilir.
--- OR kullanýmýnda koþullardan herhangi birini saðlayan tüm kayýtlar getirilir.
+-- Birden fazla koÅŸul belirtmek iÃ§in "AND" ya da "OR" kullanÄ±lÄ±r.
+-- WHERE ifadesi ile istenildiÄŸi kadar koÅŸul belirtilebilir.
+-- AND kullanÄ±mÄ±nda belirtilen koÅŸullarÄ±n tÃ¼mÃ¼nÃ¼ saÄŸlayan kayÄ±tlar getirilir.
+-- OR kullanÄ±mÄ±nda koÅŸullardan herhangi birini saÄŸlayan tÃ¼m kayÄ±tlar getirilir.
 
 -- kullanici tablosu 
 /*
 | id | ad        | soyad     | yas |
-|  1 | Ali       | Yýlmaz    |  19 |
+|  1 | Ali       | YÄ±lmaz    |  19 |
 |  2 | Ahmet     | Mutlu     |  18 |
-|  3 | Sare      | Aygün     |  21 |
-|  4 | Ayþe      | Demir     |  25 |
-|  5 | Abdulmelik| Derinkök  |  40 |
+|  3 | Sare      | AygÃ¼n     |  21 |
+|  4 | AyÅŸe      | Demir     |  25 |
+|  5 | Abdulmelik| DerinkÃ¶k  |  40 |
 */
--- Örnek – 1
+-- Ã–rnek â€“ 1
 
 SELECT * FROM kullanici WHERE ad='Sare'
 
-/* Örnek - 1 Çýktý
+/* Ã–rnek - 1 Ã‡Ä±ktÄ±
 | id | ad        | soyad     | yas |
-|  3 | Sare      | Aygün     |  21 |
+|  3 | Sare      | AygÃ¼n     |  21 |
 */
 
--- Örnek – 2
+-- Ã–rnek â€“ 2
 
 SELECT * FROM kullanici WHERE yas>20
 
-/* Örnek - 2 Çýktý
+/* Ã–rnek - 2 Ã‡Ä±ktÄ±
 | id | ad        | soyad     | yas |
-|  3 | Sare      | Aygün     |  21 |
-|  4 | Ayþe      | Demir     |  25 |
-|  5 | Abdulmelik| Derinkök  |  40 |
+|  3 | Sare      | AygÃ¼n     |  21 |
+|  4 | AyÅŸe      | Demir     |  25 |
+|  5 | Abdulmelik| DerinkÃ¶k  |  40 |
 */
 
--- Örnek – 3
+-- Ã–rnek â€“ 3
 
 SELECT * FROM kullanici WHERE id=1
 
-/* Örnek - 3 Çýktý
+/* Ã–rnek - 3 Ã‡Ä±ktÄ±
 | id | ad        | soyad     | yas |
-|  1 | Ali       | Yýlmaz    |  19 |
+|  1 | Ali       | YÄ±lmaz    |  19 |
 */
 
---Örnek -4
+--Ã–rnek -4
 SELECT * FROM kullanici WHERE id=1 AND yas=20
 
-/* Örnek - 4 Çýktý
+/* Ã–rnek - 4 Ã‡Ä±ktÄ±
 | id | ad        | soyad     | yas |
---ÞARTLARA UYGUN KAYIT OLMADIÐINDAN BOÞ DÖNDÜRÜR--
+--ÅžARTLARA UYGUN KAYIT OLMADIÄžINDAN BOÅž DÃ–NDÃœRÃœR--
 */
 
---Örnek -5
+--Ã–rnek -5
 SELECT * FROM kullanici WHERE id=1 OR yas=40
 
-/* Örnek - 5 Çýktý
+/* Ã–rnek - 5 Ã‡Ä±ktÄ±
 | id | ad        | soyad     | yas |
-|  1 | Ali       | Yýlmaz    |  19 |
-|  5 | Abdulmelik| Derinkök  |  40 |
+|  1 | Ali       | YÄ±lmaz    |  19 |
+|  5 | Abdulmelik| DerinkÃ¶k  |  40 |
 */
 

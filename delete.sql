@@ -1,49 +1,49 @@
---syntax
+ï»¿--syntax
 
-DELETE FROM [TABLO_ADI] WHERE [ÞART]
+DELETE FROM [TABLO_ADI] WHERE [ÅžART]
 
---DÝKKAT: DELETE komutu kullanýlýrken WHERE ifadesi kullanýlmazsa yani þart belirtilmezse tablodaki tüm veriler silinir.
+--DÄ°KKAT: DELETE komutu kullanÄ±lÄ±rken WHERE ifadesi kullanÄ±lmazsa yani ÅŸart belirtilmezse tablodaki tÃ¼m veriler silinir.
 
 /*
 
  - ogrenciler tablosu
 
 | id | ad            | soyad      | sinif | vize | final |
-|  1 | Ali           | Yýlmaz     |  1    | 65   | 82    |
+|  1 | Ali           | YÄ±lmaz     |  1    | 65   | 82    |
 |  2 | Ahmet         | Mutlu      |  1    | 30   | 45    |
-|  3 | Asel Sare     | Aygün      |  2    | 85   | 79    |
-|  4 | Ayþe          | Demir      |  2    | 55   | 63    |
-|  5 | Abdulmelik    | Derinkök   |  2    | 100  | 100   |
-|  6 | Muhammed Yaðýz| Mutlu      |  2    | 95   | 68    |
-|  7 | Elif Eylül    | Mutlu      |  2    | 90   | 90    |
+|  3 | Asel Sare     | AygÃ¼n      |  2    | 85   | 79    |
+|  4 | AyÅŸe          | Demir      |  2    | 55   | 63    |
+|  5 | Abdulmelik    | DerinkÃ¶k   |  2    | 100  | 100   |
+|  6 | Muhammed YaÄŸÄ±z| Mutlu      |  2    | 95   | 68    |
+|  7 | Elif EylÃ¼l    | Mutlu      |  2    | 90   | 90    |
 */
 
---Örnek - 1
+--Ã–rnek - 1
 DELETE FROM ogrenciler WHERE id=2
 
-/* Örnek - 1 Çýktý
+/* Ã–rnek - 1 Ã‡Ä±ktÄ±
 (1 row affected)
- -- Tablo olarak çýktý vermez ancak bilgi mesajý olarak etkilenen satýr sayýsýný yazdýrýr.
+ -- Tablo olarak Ã§Ä±ktÄ± vermez ancak bilgi mesajÄ± olarak etkilenen satÄ±r sayÄ±sÄ±nÄ± yazdÄ±rÄ±r.
 
-  Ýþlemden sonra ogrenciler tablosu:
+  Ä°ÅŸlemden sonra ogrenciler tablosu:
 | id | ad            | soyad      | sinif | vize | final |
-|  1 | Ali           | Yýlmaz     |  1    | 65   | 82    |
-|  3 | Asel Sare     | Aygün      |  2    | 85   | 79    |
-|  4 | Ayþe          | Demir      |  2    | 55   | 63    |
-|  5 | Abdulmelik    | Derinkök   |  2    | 100  | 100   |
-|  6 | Muhammed Yaðýz| Mutlu      |  2    | 95   | 68    |
-|  7 | Elif Eylül    | Mutlu      |  2    | 90   | 90    |
+|  1 | Ali           | YÄ±lmaz     |  1    | 65   | 82    |
+|  3 | Asel Sare     | AygÃ¼n      |  2    | 85   | 79    |
+|  4 | AyÅŸe          | Demir      |  2    | 55   | 63    |
+|  5 | Abdulmelik    | DerinkÃ¶k   |  2    | 100  | 100   |
+|  6 | Muhammed YaÄŸÄ±z| Mutlu      |  2    | 95   | 68    |
+|  7 | Elif EylÃ¼l    | Mutlu      |  2    | 90   | 90    |
 
 */
 
---Örnek - 2
+--Ã–rnek - 2
 DELETE FROM ogrenciler 
 
-/* Örnek - 2 Çýktý
+/* Ã–rnek - 2 Ã‡Ä±ktÄ±
 (6 rows affected)
- -- Tablo olarak çýktý vermez ancak bilgi mesajý olarak etkilenen satýr sayýsýný yazdýrýr.
+ -- Tablo olarak Ã§Ä±ktÄ± vermez ancak bilgi mesajÄ± olarak etkilenen satÄ±r sayÄ±sÄ±nÄ± yazdÄ±rÄ±r.
 
-  Ýþlemden sonra ogrenciler tablosu:
+  Ä°ÅŸlemden sonra ogrenciler tablosu:
 | id | ad            | soyad      | sinif | vize | final |
 
 			[TABLODA KAYIT BULUNMAZ]

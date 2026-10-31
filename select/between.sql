@@ -1,25 +1,25 @@
--- Syntax 
+ï»¿-- Syntax 
 SELECT [KOLONLAR] FROM [TABLO_ADI] WHERE [KOLON_ADI] BETWEEN [ALT_LIMIT] AND [UST_LIMIT]
 
--- BETWEEN ifadesinde belirtilen alt ve üst limit deðerleri de dahil edilerek filtreleme gerçekleþtirilir.
+-- BETWEEN ifadesinde belirtilen alt ve Ã¼st limit deÄŸerleri de dahil edilerek filtreleme gerÃ§ekleÅŸtirilir.
 -- kullanici tablosu 
 /*
 | id | ad        | soyad     | yas |
-|  1 | Ali       | Yýlmaz    |  19 |
+|  1 | Ali       | YÄ±lmaz    |  19 |
 |  2 | Ahmet     | Mutlu     |  18 |
-|  3 | Sare      | Aygün     |  21 |
-|  4 | Ayþe      | Demir     |  25 |
-|  5 | Abdulmelik| Derinkök  |  40 |
+|  3 | Sare      | AygÃ¼n     |  21 |
+|  4 | AyÅŸe      | Demir     |  25 |
+|  5 | Abdulmelik| DerinkÃ¶k  |  40 |
 */
--- Örnek – 1
+-- Ã–rnek â€“ 1
 
 SELECT * FROM kullanici WHERE yas BETWEEN 20 AND 40
 
-/* Örnek - 1 Çýktý
+/* Ã–rnek - 1 Ã‡Ä±ktÄ±
 | id | ad        | soyad     | yas |
-|  3 | Sare      | Aygün     |  21 |
-|  4 | Ayþe      | Demir     |  25 |
-|  5 | Abdulmelik| Derinkök  |  40 |
+|  3 | Sare      | AygÃ¼n     |  21 |
+|  4 | AyÅŸe      | Demir     |  25 |
+|  5 | Abdulmelik| DerinkÃ¶k  |  40 |
 */
 
 

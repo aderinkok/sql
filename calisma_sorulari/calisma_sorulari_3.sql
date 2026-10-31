@@ -1,61 +1,62 @@
-/*
+ï»¿/*
 
-Çalışma Soruları - 3 
-Aşağıdaki ifadelerde kullanılacak veritabanı farklılık gösterebilir:
-1-  final isimli veritabanı oluşturunuz.
-	### aşağıda yer alan ifadeleri final veritabanında gerçekleştiriniz ###
-2-  final veritabanına ogrenci isimli tablo olusturunuz tablonun kolonlarına dair ozellikler:
-    - Kolon adı: id           Türü: int          CONSTRAINTS: PRIMARY, IDENTITY(1,1)
-	- Kolon adı: ad           Türü: VARCHAR(50)  CONSTRAINTS: NOT NULL
-	- Kolon adı: soyad        Türü: VARCHAR(50)  CONSTRAINTS: NOT NULL 
-	- Kolon adı: dogum_yeri   Türü: VARCHAR(30)  CONSTRAINTS: DEFAULT('TR') NULL
-	- Kolon adı: dogum_tarihi Türü: DATE         CONSTRAINTS: NOT NULL
-3-  final veritabanına ogrenci_detay isimli tablo olusturunuz tablonun kolonlarına dair ozellikler:
-    - Kolon adı: id               Türü: INT          CONSTRAINTS: PRIMARY, IDENTITY(1,1)
-	- Kolon adı: ogrenci_id       Türü: INT          CONSTRAINTS: FOREIGN KEY REFERENCES ogrenci(id) 
+Ã‡alÄ±ÅŸma SorularÄ± - 3 
+AÅŸaÄŸÄ±daki ifadelerde kullanÄ±lacak veritabanÄ± farklÄ±lÄ±k gÃ¶sterebilir:
+1-  final isimli veritabanÄ± oluÅŸturunuz.
+	### aÅŸaÄŸÄ±da yer alan ifadeleri final veritabanÄ±nda gerÃ§ekleÅŸtiriniz ###
+2-  final veritabanÄ±na ogrenci isimli tablo olusturunuz tablonun kolonlarÄ±na dair ozellikler:
+    - Kolon adÄ±: id           TÃ¼rÃ¼: int          CONSTRAINTS: PRIMARY, IDENTITY(1,1)
+	- Kolon adÄ±: ad           TÃ¼rÃ¼: VARCHAR(50)  CONSTRAINTS: NOT NULL
+	- Kolon adÄ±: soyad        TÃ¼rÃ¼: VARCHAR(50)  CONSTRAINTS: NOT NULL 
+	- Kolon adÄ±: dogum_yeri   TÃ¼rÃ¼: VARCHAR(30)  CONSTRAINTS: DEFAULT('TR') NULL
+	- Kolon adÄ±: dogum_tarihi TÃ¼rÃ¼: DATE         CONSTRAINTS: NOT NULL
+3-  final veritabanÄ±na ogrenci_detay isimli tablo olusturunuz tablonun kolonlarÄ±na dair ozellikler:
+    - Kolon adÄ±: id               TÃ¼rÃ¼: INT          CONSTRAINTS: PRIMARY, IDENTITY(1,1)
+	- Kolon adÄ±: ogrenci_id       TÃ¼rÃ¼: INT          CONSTRAINTS: FOREIGN KEY REFERENCES ogrenci(id) 
 	  ON UPDATE CASCADE ON DELETE CASCADE
-	- Kolon adı: okul             Türü: VARCHAR(50)  CONSTRAINTS: DEFAULT ('Pazaryeri MYO') NULL 
-	- Kolon adı: bolum            Türü: VARCHAR(30)  CONSTRAINTS: DEFAULT('Bilgisayar Programcılığı') NULL
-	- Kolon adı: sinif            Türü: INT          CONSTRAINTS: NOT NULL
-	- Kolon adı: mezuniyet_tarihi Türü: DATE         CONSTRAINTS: NULL
-4- ogrenci ve ogrenci_detay tablosuna aşağıdaki kayıtları en az sorgu ile ekleyiniz.
-NOT: ogrenci_detay tablosuna eklenecek veri için öncelikle ogrenci tablosunda kayıt oluşturulmalı ve id bilgisi
-ogrenci_detay tablosundaki ogrenci_id kolonu için elde edilmelidir.
-NOT-2: Kolonlarda değer bulunmayan kayıtların ilgili kolon değeri boş olacaktır.
+	- Kolon adÄ±: okul             TÃ¼rÃ¼: VARCHAR(50)  CONSTRAINTS: DEFAULT ('Pazaryeri MYO') NULL 
+	- Kolon adÄ±: bolum            TÃ¼rÃ¼: VARCHAR(30)  CONSTRAINTS: DEFAULT('Bilgisayar ProgramcÄ±lÄ±ÄŸÄ±') NULL
+	- Kolon adÄ±: sinif            TÃ¼rÃ¼: INT          CONSTRAINTS: NOT NULL
+	- Kolon adÄ±: mezuniyet_tarihi TÃ¼rÃ¼: DATE         CONSTRAINTS: NULL
+4- ogrenci ve ogrenci_detay tablosuna aÅŸaÄŸÄ±daki kayÄ±tlarÄ± en az sorgu ile ekleyiniz.
+NOT: ogrenci_detay tablosuna eklenecek veri iÃ§in Ã¶ncelikle ogrenci tablosunda kayÄ±t oluÅŸturulmalÄ± ve id bilgisi
+ogrenci_detay tablosundaki ogrenci_id kolonu iÃ§in elde edilmelidir.
+NOT-2: Tabloda boÅŸ bÄ±rakÄ±lan hÃ¼creler iÃ§in deÄŸer girilmeyecektir. Bu durumda varsayÄ±lan deÄŸeri (DEFAULT) tanÄ±mlÄ± olan kolonlara
+varsayÄ±lan deÄŸer, diÄŸer kolonlara NULL atanÄ±r.
 |ad        |soyad       |dogum_yeri |dogum_tarihi | okul        | bolum              | sinif | mezuniyet_tarihi |
-|Aytaç     | Aksoy      | Van       |2000-01-04   | Bilecik MYO | İnternet ve Ağ Tek.| 1     | 2021-06-23       |
-|Naim      | Aksoy      | Eskişehir |2001-05-24   | Bozüyük MYO | Web Tasarım ve Kod.| 1     |                  |
-|Ensar     | Yılmaz     | İstanbul  |2002-06-12   | Malatya MYO | İnternet ve Ağ Tek.| 2     | 2021-06-23       |
-|Gülnaz    | Değirmenci | Mardin    |2001-02-17   |             | Web Tasarım ve Kod.| 2     |                  |
-|Abdülaziz | Küçük      | Ankara    |2000-03-10   | Ankara MYO  | Web Tasarım ve Kod.| 2     | 2021-06-23       |
-|Mesud     | Burakgazi  | Bilecik   |2003-04-08   | İzmir MYO   | İnternet ve Ağ Tek.| 1     |                  |
-|Gülnur    | Teke       | İzmir     |2003-07-03   | Bilecik MYO | İnternet ve Ağ Tek.| 2     | 2021-06-23       |
-|Umut      | Değirmenci | Trabzon   |2002-02-07   | Malatya MYO |                    | 1     |                  |
-|Bulut     | Demirci    | Ağrı      |2001-05-14   |             | İnternet ve Ağ Tek.| 1     |                  |
-|Belinay   | Değirmenci | Rize      |2002-06-19   |             |                    | 2     | 2020-06-18       |
-|Firuze    | Solak      | Çanakkale |2003-03-21   | Ankara MYO  | Web Tasarım ve Kod.| 1     |                  |
-|Fadime    | Badem      | Malatya   |2000-06-09   | Malatya MYO | İnternet ve Ağ Tek.| 1     |                  |
-|Danyal    | Teke       | Elazığ    |2002-09-18   | İzmir MYO   | İnternet ve Ağ Tek.| 2     |                  |
-|Nadire    | Kartal     | Afyon     |2001-12-26   |             | Web Tasarım ve Kod.| 1     |                  |
-|Behiye    | Değirmenci | Tunceli   |2000-11-23   | Bilecik MYO | Web Tasarım ve Kod.| 1     |                  |
-|Mazhar    | Katırcı    | Sakarya   |2001-11-18   |             |                    |       |                  |
+|AytaÃ§     | Aksoy      | Van       |2000-01-04   | Bilecik MYO | Ä°nternet ve AÄŸ Tek.| 1     | 2021-06-23       |
+|Naim      | Aksoy      | EskiÅŸehir |2001-05-24   | BozÃ¼yÃ¼k MYO | Web TasarÄ±m ve Kod.| 1     |                  |
+|Ensar     | YÄ±lmaz     | Ä°stanbul  |2002-06-12   | Malatya MYO | Ä°nternet ve AÄŸ Tek.| 2     | 2021-06-23       |
+|GÃ¼lnaz    | DeÄŸirmenci | Mardin    |2001-02-17   |             | Web TasarÄ±m ve Kod.| 2     |                  |
+|AbdÃ¼laziz | KÃ¼Ã§Ã¼k      | Ankara    |2000-03-10   | Ankara MYO  | Web TasarÄ±m ve Kod.| 2     | 2021-06-23       |
+|Mesud     | Burakgazi  | Bilecik   |2003-04-08   | Ä°zmir MYO   | Ä°nternet ve AÄŸ Tek.| 1     |                  |
+|GÃ¼lnur    | Teke       | Ä°zmir     |2003-07-03   | Bilecik MYO | Ä°nternet ve AÄŸ Tek.| 2     | 2021-06-23       |
+|Umut      | DeÄŸirmenci | Trabzon   |2002-02-07   | Malatya MYO |                    | 1     |                  |
+|Bulut     | Demirci    | AÄŸrÄ±      |2001-05-14   |             | Ä°nternet ve AÄŸ Tek.| 1     |                  |
+|Belinay   | DeÄŸirmenci | Rize      |2002-06-19   |             |                    | 2     | 2020-06-18       |
+|Firuze    | Solak      | Ã‡anakkale |2003-03-21   | Ankara MYO  | Web TasarÄ±m ve Kod.| 1     |                  |
+|Fadime    | Badem      | Malatya   |2000-06-09   | Malatya MYO | Ä°nternet ve AÄŸ Tek.| 1     |                  |
+|Danyal    | Teke       | ElazÄ±ÄŸ    |2002-09-18   | Ä°zmir MYO   | Ä°nternet ve AÄŸ Tek.| 2     |                  |
+|Nadire    | Kartal     | Afyon     |2001-12-26   |             | Web TasarÄ±m ve Kod.| 1     |                  |
+|Behiye    | DeÄŸirmenci | Tunceli   |2000-11-23   | Bilecik MYO | Web TasarÄ±m ve Kod.| 1     |                  |
+|Mazhar    | KatÄ±rcÄ±    | Sakarya   |2001-11-18   |             |                    |       |                  |
 |Haydar    | Karga      | Mersin    |2001-01-12   |             |                    |       |                  |
-|Lütfiye   | Ekmekçi    | Kırşehir  |2000-10-27   |             |                    |       |                  |
-|İpek      | Yılmaz     | Kayseri   |2002-12-05   |             |                    |       |                  |
-|Meral     | Kartal     | İstanbul  |2001-06-19   |             |                    |       |                  |
+|LÃ¼tfiye   | EkmekÃ§i    | KÄ±rÅŸehir  |2000-10-27   |             |                    |       |                  |
+|Ä°pek      | YÄ±lmaz     | Kayseri   |2002-12-05   |             |                    |       |                  |
+|Meral     | Kartal     | Ä°stanbul  |2001-06-19   |             |                    |       |                  |
 
-5- Her iki tabloda yer alan tüm kolonları listeleyen ve yalnızca eşleşen INNER JOIN komutunu yazınız.
-6- ogrenci tablosundaki tüm kayıtları listelemek koşulu ile ogrenci_detay tablosu ile birleştirerek, iki tablonun tüm kolonlarını (eşleşen veya eşleşmeyen veriler) INNER listeleyiniz.
-7- ogrenci tablosundaki kayıtları ogrenci_detay tablosu ile birleştirerek, iki tablonun tüm kolonlarını (yalnızca eşleşen veriler) listeleyiniz.
-8- ogrenci tablosundaki tüm kayıtları  listelemek koşulu ile ogrenci_detay tablosu ile birleştirerek, iki tablonun tüm kolonlarını (eşleşen veya eşleşmeyen veriler) FULL JOIN listeleyiniz.
-9- ogrenci tablosundaki dogum_yeri kolonundaki değeri "Afyon" olan kayıtların dogum_yeri kolon değerini "Afyonkarahisar" olarak güncelleyiniz.
-10-ogrenci_detay tablosundaki bolum kolonunda "Tek." ve "Kod." ifadeleri bulunan kayıtların  bolum değerlerini sırasıyla "İnternet ve Ağ Teknolojileri" ve "Web Tasarım ve Kodlama" olarak güncelleniyiniz.
-11-ogrenci tablosundaki dogum_tarihi sütunundaki değerin parçalanarak ay, yıl ve gün sütunları ile isimleri ile listeleyiniz.
-12-ogrenci tablosundaki tüm kayıtları (id kolonunun artış değerini de sıfırlayarak) siliniz. (***)
-13-ogrenci_detay tablosundaki mezuniyet_tarihi kolon değeri NULL olan kayıtları siliniz.
+5- Her iki tabloda yer alan tÃ¼m kolonlarÄ± listeleyen ve yalnÄ±zca eÅŸleÅŸen INNER JOIN komutunu yazÄ±nÄ±z.
+6- ogrenci tablosundaki tÃ¼m kayÄ±tlarÄ± listelemek koÅŸulu ile ogrenci_detay tablosu ile birleÅŸtirerek, iki tablonun tÃ¼m kolonlarÄ±nÄ± (eÅŸleÅŸen veya eÅŸleÅŸmeyen veriler) LEFT JOIN ile listeleyiniz.
+7- ogrenci tablosundaki kayÄ±tlarÄ± ogrenci_detay tablosu ile birleÅŸtirerek, iki tablonun tÃ¼m kolonlarÄ±nÄ± (yalnÄ±zca eÅŸleÅŸen veriler) listeleyiniz.
+8- ogrenci tablosundaki tÃ¼m kayÄ±tlarÄ±  listelemek koÅŸulu ile ogrenci_detay tablosu ile birleÅŸtirerek, iki tablonun tÃ¼m kolonlarÄ±nÄ± (eÅŸleÅŸen veya eÅŸleÅŸmeyen veriler) FULL JOIN listeleyiniz.
+9- ogrenci tablosundaki dogum_yeri kolonundaki deÄŸeri "Afyon" olan kayÄ±tlarÄ±n dogum_yeri kolon deÄŸerini "Afyonkarahisar" olarak gÃ¼ncelleyiniz.
+10-ogrenci_detay tablosundaki bolum kolonunda "Tek." ve "Kod." ifadeleri bulunan kayÄ±tlarÄ±n  bolum deÄŸerlerini sÄ±rasÄ±yla "Ä°nternet ve AÄŸ Teknolojileri" ve "Web TasarÄ±m ve Kodlama" olarak gÃ¼ncelleyiniz.
+11-ogrenci tablosundaki dogum_tarihi sÃ¼tunundaki deÄŸerin parÃ§alanarak ay, yÄ±l ve gÃ¼n sÃ¼tunlarÄ± ile isimleri ile listeleyiniz.
+12-ogrenci tablosundaki tÃ¼m kayÄ±tlarÄ± (id kolonunun artÄ±ÅŸ deÄŸerini de sÄ±fÄ±rlayarak) siliniz. (***)
+13-ogrenci_detay tablosundaki mezuniyet_tarihi kolon deÄŸeri NULL olan kayÄ±tlarÄ± siliniz.
 14-ogrenci tablosunu siliniz.
 15-ogrenci_detay tablosunu siliniz.
-16-final veritabanını siliniz.
+16-final veritabanÄ±nÄ± siliniz.
 */
 
 
@@ -64,8 +65,11 @@ NOT-2: Kolonlarda değer bulunmayan kayıtların ilgili kolon değeri boş olacaktır.
 
 --1
 CREATE DATABASE final
+--NOT: Sunucunun varsayÄ±lan dil ayarÄ± TÃ¼rkÃ§e deÄŸilse VARCHAR kolonlarda TÃ¼rkÃ§e karakterler (ÅŸ, ÄŸ, Ä±, Ä°) "?" olarak saklanabilir.
+--Bu durumda veritabanÄ± TÃ¼rkÃ§e karÅŸÄ±laÅŸtÄ±rma kurallarÄ± ile oluÅŸturulabilir:
+--CREATE DATABASE final COLLATE Turkish_CI_AS
 
---2 [komut çalıştırılmadan önce ilgili veritabanı seçilmelidir!]
+--2 [komut Ã§alÄ±ÅŸtÄ±rÄ±lmadan Ã¶nce ilgili veritabanÄ± seÃ§ilmelidir!]
 
 use final;
 CREATE TABLE ogrenci
@@ -73,9 +77,10 @@ CREATE TABLE ogrenci
 id               INT          PRIMARY KEY IDENTITY(1,1),
 ad               VARCHAR(50)  NOT NULL,
 soyad            VARCHAR(50)  NOT NULL,
-dogum_yeri       VARCHAR(30)  DEFAULT('tr') NULL,
+dogum_yeri       VARCHAR(30)  DEFAULT('TR') NULL,
 dogum_tarihi     DATE         NOT NULL,
 )
+--NOT: IDENTITY(1,1) deÄŸerin 1'den baÅŸlayÄ±p her kayÄ±tta 1 artmasÄ±nÄ± saÄŸlar. DEFAULT, deÄŸer verilmeyen kolona atanacak varsayÄ±lan deÄŸeri belirler.
 
 --3 
 CREATE table ogrenci_detay
@@ -83,122 +88,128 @@ CREATE table ogrenci_detay
 id               INT PRIMARY KEY IDENTITY(1,1),
 ogrenci_id       INT FOREIGN KEY REFERENCES ogrenci(id) ON UPDATE CASCADE ON DELETE CASCADE,
 okul             VARCHAR(50) DEFAULT('Pazaryeri MYO') NULL,
-bolum            VARCHAR(50) DEFAULT('Bilgisayar Programcılığı') NULL,
+bolum            VARCHAR(30) DEFAULT('Bilgisayar ProgramcÄ±lÄ±ÄŸÄ±') NULL,
 sinif            INT NOT NULL,
 mezuniyet_tarihi DATE NULL
 )
+--NOT: FOREIGN KEY, ogrenci_id kolonunun yalnÄ±zca ogrenci tablosunda bulunan id deÄŸerlerini almasÄ±nÄ± saÄŸlar.
+--ON DELETE CASCADE ana kayÄ±t silindiÄŸinde iliÅŸkili kayÄ±tlarÄ±n da silinmesini, ON UPDATE CASCADE ise id deÄŸiÅŸikliÄŸinin iliÅŸkili kayÄ±tlara yansÄ±masÄ±nÄ± saÄŸlar.
 
 
 --4
---I. Aşama 
+--I. AÅŸama 
 INSERT ogrenci VALUES
-('Aytaç','Aksoy','Van','2000-01-04'),
-('Naim','Aksoy','Eskişehir','2001-05-24'),
-('Ensar','Yılmaz','İstanbul','2002-06-12'),
-('Gülnaz','Değirmenci','Mardin','2001-02-17'),
-('Abdülaziz','Küçük','Ankara','2000-03-10'),
-('Mesud','Burakgazi','Bilecik','2003-04-08 '),
-('Gülnur','Teke','İzmir','2003-07-03'),
-('Umut','Değirmenci','Trabzon','2002-02-07'),
-('Bulut','Demirci','Ağrı','2001-05-14'),
-('Belinay','Değirmenci','Rize','2002-06-19'),
-('Firuze','Solak','Çanakkale','2003-03-21'),
+('AytaÃ§','Aksoy','Van','2000-01-04'),
+('Naim','Aksoy','EskiÅŸehir','2001-05-24'),
+('Ensar','YÄ±lmaz','Ä°stanbul','2002-06-12'),
+('GÃ¼lnaz','DeÄŸirmenci','Mardin','2001-02-17'),
+('AbdÃ¼laziz','KÃ¼Ã§Ã¼k','Ankara','2000-03-10'),
+('Mesud','Burakgazi','Bilecik','2003-04-08'),
+('GÃ¼lnur','Teke','Ä°zmir','2003-07-03'),
+('Umut','DeÄŸirmenci','Trabzon','2002-02-07'),
+('Bulut','Demirci','AÄŸrÄ±','2001-05-14'),
+('Belinay','DeÄŸirmenci','Rize','2002-06-19'),
+('Firuze','Solak','Ã‡anakkale','2003-03-21'),
 ('Fadime','Badem','Malatya','2000-06-09'),
-('Danyal','Teke','Elazığ','2002-09-18'),
+('Danyal','Teke','ElazÄ±ÄŸ','2002-09-18'),
 ('Nadire','Kartal','Afyon','2001-12-26'),
-('Behiye','Değirmenci','Tunceli','2000-11-23'),
-('Mazhar','Katırcı','Sakarya','2001-11-18'),
+('Behiye','DeÄŸirmenci','Tunceli','2000-11-23'),
+('Mazhar','KatÄ±rcÄ±','Sakarya','2001-11-18'),
 ('Haydar','Karga','Mersin','2001-01-12'),
-('Lütfiye','Kırşehir','Tunceli','2000-10-27'),
-('İpek','Yılmaz','Kayseri','2002-12-05'),
-('Meral','Kartal','İstanbul','2001-06-19')
+('LÃ¼tfiye','EkmekÃ§i','KÄ±rÅŸehir','2000-10-27'),
+('Ä°pek','YÄ±lmaz','Kayseri','2002-12-05'),
+('Meral','Kartal','Ä°stanbul','2001-06-19')
 
---II. Aşama
---Not: ogrenci_detay kayıtlarını eklemek için ana tablodaki id verisinin bilinmesi gerekmektedir.
+--II. AÅŸama
+--Not: ogrenci_detay kayÄ±tlarÄ±nÄ± eklemek iÃ§in ana tablodaki id verisinin bilinmesi gerekmektedir.
 /*
-Örnek olması amacıyla eklenen ilk kayıt iç içe sorgu yöntemi kullanılarak eklenmiştir.
-SELECT id FROM ogrenci WHERE ad='Aytaç' AND soyad='Aksoy' AND dogum_yeri='Van'
-sorgusu bize detayını eklemek istediğimiz kaydın id değerini verir. Bu sorgu ana sorgunun içinde parantez içerisinde 
-kullanıldığında id değeri yazılmış gibi davranacaktır. Sorgunun tam kullanımı aşağıda yer almaktadır.
+Ã–rnek olmasÄ± amacÄ±yla eklenen ilk kayÄ±t iÃ§ iÃ§e sorgu yÃ¶ntemi kullanÄ±larak eklenmiÅŸtir.
+SELECT id FROM ogrenci WHERE ad='AytaÃ§' AND soyad='Aksoy' AND dogum_yeri='Van'
+sorgusu bize detayÄ±nÄ± eklemek istediÄŸimiz kaydÄ±n id deÄŸerini verir. Bu sorgu ana sorgunun iÃ§inde parantez iÃ§erisinde 
+kullanÄ±ldÄ±ÄŸÄ±nda id deÄŸeri yazÄ±lmÄ±ÅŸ gibi davranacaktÄ±r. Sorgunun tam kullanÄ±mÄ± aÅŸaÄŸÄ±da yer almaktadÄ±r.
 */
--- 1. kaydın detay verisinin eklenmesi.
-INSERT ogrenci_detay VALUES ((SELECT id FROM ogrenci WHERE ad='Aytaç' AND soyad='Aksoy' AND dogum_yeri='Van'),'Bilecik MYO', 'İnternet ve Ağ Tek.',1,'2021-06-23')
+-- 1. kaydÄ±n detay verisinin eklenmesi.
+INSERT ogrenci_detay VALUES ((SELECT id FROM ogrenci WHERE ad='AytaÃ§' AND soyad='Aksoy' AND dogum_yeri='Van'),'Bilecik MYO', 'Ä°nternet ve AÄŸ Tek.',1,'2021-06-23')
 
---Diğer kayıtlar 
-INSERT ogrenci_detay (ogrenci_id,okul,bolum,sinif) VALUES(2,'Bozüyük MYO', 'Web Tasarım ve Kod.',1)
-INSERT ogrenci_detay VALUES(3,'Malatya MYO', 'İnternet ve Ağ Tek.',1,'2021-06-23')
-INSERT ogrenci_detay (ogrenci_id,bolum,sinif) VALUES(4,'İnternet ve Ağ Tek.',2)
-INSERT ogrenci_detay VALUES(5,'Ankara MYO', 'Web Tasarım ve Kod.',2,'2021-06-23')
-INSERT ogrenci_detay (ogrenci_id,okul,bolum,sinif)  VALUES(6,'İzmir MYO', 'İnternet ve Ağ Tek.',1)
-INSERT ogrenci_detay VALUES(7,'Bilecik MYO', 'İnternet ve Ağ Tek.',2,'2021-06-23')
+--DiÄŸer kayÄ±tlar 
+INSERT ogrenci_detay (ogrenci_id,okul,bolum,sinif) VALUES(2,'BozÃ¼yÃ¼k MYO', 'Web TasarÄ±m ve Kod.',1)
+INSERT ogrenci_detay VALUES(3,'Malatya MYO', 'Ä°nternet ve AÄŸ Tek.',2,'2021-06-23')
+INSERT ogrenci_detay (ogrenci_id,bolum,sinif) VALUES(4,'Web TasarÄ±m ve Kod.',2)
+INSERT ogrenci_detay VALUES(5,'Ankara MYO', 'Web TasarÄ±m ve Kod.',2,'2021-06-23')
+INSERT ogrenci_detay (ogrenci_id,okul,bolum,sinif)  VALUES(6,'Ä°zmir MYO', 'Ä°nternet ve AÄŸ Tek.',1)
+INSERT ogrenci_detay VALUES(7,'Bilecik MYO', 'Ä°nternet ve AÄŸ Tek.',2,'2021-06-23')
 INSERT ogrenci_detay (ogrenci_id,okul,sinif)  VALUES(8,'Malatya MYO',1)
-INSERT ogrenci_detay (ogrenci_id,bolum,sinif)  VALUES(9,'İnternet ve Ağ Tek.',1)
-INSERT ogrenci_detay (ogrenci_id,sinif,mezuniyet_tarihi)  VALUES(10,1,'2020-06-08')
-INSERT ogrenci_detay (ogrenci_id,okul,bolum,sinif)  VALUES(11,'Ankara MYO', 'Web Tasarım ve Kod.',1),
-(12,'Malatya MYO', 'İnternet ve Ağ Tek.',1),
-(13,'İzmir MYO', 'İnternet ve Ağ Tek.',2)
-INSERT ogrenci_detay (ogrenci_id,okul,bolum,sinif)  VALUES(14,'Bilecik MYO','Web Tasarım ve Kod.',1)
-INSERT ogrenci_detay (ogrenci_id,bolum,sinif) VALUES(15,'Web Tasarım ve Kod.',1)
+INSERT ogrenci_detay (ogrenci_id,bolum,sinif)  VALUES(9,'Ä°nternet ve AÄŸ Tek.',1)
+INSERT ogrenci_detay (ogrenci_id,sinif,mezuniyet_tarihi)  VALUES(10,2,'2020-06-18')
+INSERT ogrenci_detay (ogrenci_id,okul,bolum,sinif)  VALUES(11,'Ankara MYO', 'Web TasarÄ±m ve Kod.',1),
+(12,'Malatya MYO', 'Ä°nternet ve AÄŸ Tek.',1),
+(13,'Ä°zmir MYO', 'Ä°nternet ve AÄŸ Tek.',2)
+INSERT ogrenci_detay (ogrenci_id,bolum,sinif)  VALUES(14,'Web TasarÄ±m ve Kod.',1)
+INSERT ogrenci_detay (ogrenci_id,okul,bolum,sinif) VALUES(15,'Bilecik MYO','Web TasarÄ±m ve Kod.',1)
 
 
 
 --5
-SELECT * FROM ogrenci INNER JOIN ogrenci_detay ON ogrenci.id=ogrenci_detay.ogrenci_id
+SELECT * FROM ogrenci INNER JOIN ogrenci_detay ON ogrenci.id=ogrenci_detay.ogrenci_id  --Detay kaydÄ± olmayan Ã¶ÄŸrenciler listelenmez.
 
 --6
 
-SELECT * FROM ogrenci LEFT JOIN ogrenci_detay ON ogrenci.id=ogrenci_detay.ogrenci_id
+SELECT * FROM ogrenci LEFT JOIN ogrenci_detay ON ogrenci.id=ogrenci_detay.ogrenci_id  --Detay kaydÄ± olmayan Ã¶ÄŸrencilerde ogrenci_detay kolonlarÄ± NULL olur.
 
 --7
---NOT: INNER JOIN sorgusuda kullanılabilirdi. 
+--NOT: INNER JOIN sorgusu da kullanÄ±labilirdi. Her detay kaydÄ±nÄ±n bir Ã¶ÄŸrencisi olduÄŸundan (FOREIGN KEY) iki sorgu aynÄ± Ã§Ä±ktÄ±yÄ± verir.
 SELECT * FROM ogrenci RIGHT JOIN ogrenci_detay ON ogrenci.id=ogrenci_detay.ogrenci_id
 
 --8
 SELECT * FROM ogrenci FULL JOIN ogrenci_detay ON ogrenci.id=ogrenci_detay.ogrenci_id
+--NOT: Her detay kaydÄ±nÄ±n bir Ã¶ÄŸrencisi olduÄŸundan bu Ã¶rnekte FULL JOIN ile LEFT JOIN aynÄ± Ã§Ä±ktÄ±yÄ± verir.
 
 --9 
-UPDATE ogrenci SET dogum_yeri='Afyonkarahisar' WHERE dogum_yeri='Afyon'
+UPDATE ogrenci SET dogum_yeri='Afyonkarahisar' WHERE dogum_yeri='Afyon'  --WHERE koÅŸulu yazÄ±lmazsa tÃ¼m kayÄ±tlarÄ±n dogum_yeri deÄŸeri gÃ¼ncellenir.
 --10
-UPDATE ogrenci_detay SET bolum='İnternet ve Ağ Teknolojileri' WHERE bolum LIKE '%Tek.%'
-UPDATE ogrenci_detay SET bolum='Web Tasarım ve Kodlama' WHERE bolum LIKE '%Kod.%'
+UPDATE ogrenci_detay SET bolum='Ä°nternet ve AÄŸ Teknolojileri' WHERE bolum LIKE '%Tek.%'
+UPDATE ogrenci_detay SET bolum='Web TasarÄ±m ve Kodlama' WHERE bolum LIKE '%Kod.%'
+--NOT: '%Tek.%' deseni deÄŸerin herhangi bir yerinde "Tek." ifadesi geÃ§en kayÄ±tlarÄ± bulur.
 
 --11
--- İki komutta aynı çıktıyı verir.
-SELECT MONTH(dogum_tarihi) ay, YEAR(dogum_tarihi) yıl, DAY(dogum_tarihi) FROM ogrenci 
-SELECT DATEPART(MONTH,dogum_tarihi) ay, DATEPART(YEAR,dogum_tarihi) yıl, DATEPART(DAY,dogum_tarihi) FROM ogrenci 
+-- Ä°ki komutta aynÄ± Ã§Ä±ktÄ±yÄ± verir.
+SELECT MONTH(dogum_tarihi) ay, YEAR(dogum_tarihi) yÄ±l, DAY(dogum_tarihi) gÃ¼n FROM ogrenci
+SELECT DATEPART(MONTH,dogum_tarihi) ay, DATEPART(YEAR,dogum_tarihi) yÄ±l, DATEPART(DAY,dogum_tarihi) gÃ¼n FROM ogrenci
 
 --12
---NOT: İlgili tabloda bir kolon başka bir tabloda FOREIGN KEY olarak ayarlandığı için hata alınacaktır.
---Bu tarzda "ana tablo" statüsündeki tablolarda işlemler için ilişkili tablolarına da müdahele etmek gerekir.
+--NOT: Ä°lgili tabloda bir kolon baÅŸka bir tabloda FOREIGN KEY olarak ayarlandÄ±ÄŸÄ± iÃ§in hata alÄ±nacaktÄ±r.
+--Bu tarzda "ana tablo" statÃ¼sÃ¼ndeki tablolarda iÅŸlemler iÃ§in iliÅŸkili tablolarÄ±na da mÃ¼dahale etmek gerekir.
 TRUNCATE TABLE ogrenci
+--NOT: TRUNCATE tÃ¼m kayÄ±tlarÄ± siler ve IDENTITY deÄŸerini baÅŸlangÄ±Ã§ deÄŸerine dÃ¶ndÃ¼rÃ¼r. DELETE ise IDENTITY deÄŸerini sÄ±fÄ±rlamaz.
 
---13  ogrenci_detay tablosundaki mezuniyet_tarihi kolon değeri NULL olan kayıtları siliniz.
+--13  ogrenci_detay tablosundaki mezuniyet_tarihi kolon deÄŸeri NULL olan kayÄ±tlarÄ± siliniz.
 
-DELETE FROM ogrenci_detay WHERE mezuniyet_tarihi IS NULL
+DELETE FROM ogrenci_detay WHERE mezuniyet_tarihi IS NULL  --NULL kontrolÃ¼ IS NULL ile yapÄ±lÄ±r.
 
 --14 - ogrenci tablosunu siliniz.
---NOT: İlgili tabloda bir kolon başka bir tabloda FOREIGN KEY olarak ayarlandığı için hata alınacaktır.
---Bu tarzda "ana tablo" statüsündeki tablolarda işlemler için ilişkili tablolarına da müdahele etmek gerekir.
+--NOT: Ä°lgili tabloda bir kolon baÅŸka bir tabloda FOREIGN KEY olarak ayarlandÄ±ÄŸÄ± iÃ§in hata alÄ±nacaktÄ±r.
+--Bu tarzda "ana tablo" statÃ¼sÃ¼ndeki tablolarda iÅŸlemler iÃ§in iliÅŸkili tablolarÄ±na da mÃ¼dahale etmek gerekir.
 DROP TABLE ogrenci
 
 --15 - ogrenci_detay tablosunu siliniz.
 
 DROP TABLE ogrenci_detay
+--NOT: DROP TABLE tablonun yapÄ±sÄ±nÄ± ve verilerini tamamen siler. ogrenci_detay silindikten sonra ogrenci tablosu da silinebilir.
 
---16 - final veritabanını siliniz.
--- Veritabanı kullanımda ise "Cannot drop database "final" because it is currently in use." hatası alınacaktır.
+--16 - final veritabanÄ±nÄ± siliniz.
+-- VeritabanÄ± kullanÄ±mda ise "Cannot drop database "final" because it is currently in use." hatasÄ± alÄ±nacaktÄ±r.
 DROP DATABASE final
 
 
---MSSQL ortamında silmek için:
---I. Yöntem
---Management Studio ortamından da veritabanı değişikliği gerçekleştirilebilir.
+--MSSQL ortamÄ±nda silmek iÃ§in:
+--I. YÃ¶ntem
+--Management Studio ortamÄ±ndan da veritabanÄ± deÄŸiÅŸikliÄŸi gerÃ§ekleÅŸtirilebilir.
 USE master;
 DROP DATABASE final
 
 
---II. Yöntem
--- Bu durum birden fazla aktif kullanıcısı bulunan veritabanlarını silmek için kullanılır.
+--II. YÃ¶ntem
+-- Bu durum birden fazla aktif kullanÄ±cÄ±sÄ± bulunan veritabanlarÄ±nÄ± silmek iÃ§in kullanÄ±lÄ±r.
 USE master;
 ALTER DATABASE final SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
 DROP DATABASE final;

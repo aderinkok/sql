@@ -1,4 +1,4 @@
--- Sayýsal Fonksiyonlar
+ï»¿-- SayÄ±sal Fonksiyonlar
 --syntax
 
 POWER([SAYI],[US])
@@ -13,105 +13,105 @@ FLOOR([SAYI])
 CEILING([SAYI])
 ROUND([SAYI],[BASAMAK])
 
- --Örnek - POWER 
+ --Ã–rnek - POWER 
 
 SELECT POWER(5,2)
 
--- Örnek - POWER Çýktý
+-- Ã–rnek - POWER Ã‡Ä±ktÄ±
 /*
 |(No column name)|
 | 25             |
 */
 
---Örnek - PI 
+--Ã–rnek - PI 
 
 SELECT PI()
 
--- Örnek - PI Çýktý
+-- Ã–rnek - PI Ã‡Ä±ktÄ±
 /*
 |(No column name)|
 |3,14159265358979|
 */
---Örnek - SIN 
+--Ã–rnek - SIN 
 
 SELECT SIN(60)
 
--- Örnek - SIN Çýktý
+-- Ã–rnek - SIN Ã‡Ä±ktÄ±
 /*
 |(No column name)  |
 |-0,304810621102217|
 */
---Örnek - COS 
+--Ã–rnek - COS 
 
 SELECT COS(60)
 
--- Örnek - COS Çýktý
+-- Ã–rnek - COS Ã‡Ä±ktÄ±
 /*
 |(No column name)  |
 |-0,952412980415156|
 */
---Örnek - COT 
+--Ã–rnek - COT 
 
 SELECT COT(60)
 
--- Örnek - COT Çýktý
+-- Ã–rnek - COT Ã‡Ä±ktÄ±
 /*
 |(No column name)  |
 |3,12460562224231  |
 */
---Örnek - TAN 
+--Ã–rnek - TAN 
 
 SELECT TAN(60)
 
--- Örnek - TAN Çýktý
+-- Ã–rnek - TAN Ã‡Ä±ktÄ±
 /*
 |(No column name)  |
 |0,320040389379563 |
 */
---Örnek - ABS 
+--Ã–rnek - ABS 
 
 SELECT ABS(-20)
 
--- Örnek - ABS Çýktý
+-- Ã–rnek - ABS Ã‡Ä±ktÄ±
 /*
 |(No column name)  |
 |    20            |
 */
---Örnek - RAND 
+--Ã–rnek - RAND 
 
 SELECT RAND()
 
--- Örnek - RAND Çýktý
+-- Ã–rnek - RAND Ã‡Ä±ktÄ±
 /*
 |(No column name)   |
 |0,xxxxxxxxxxxxxxxx | 
 
-!RASTGELE BÝR DEÐER ÜRETÝR.
+!RASTGELE BÄ°R DEÄžER ÃœRETÄ°R.
 */
---Örnek - FLOOR 
+--Ã–rnek - FLOOR 
 
 SELECT FLOOR(24.99999)
 
--- Örnek - FLOOR Çýktý
+-- Ã–rnek - FLOOR Ã‡Ä±ktÄ±
 /*
 |(No column name)  |
 |     24           |
 */
---Örnek - CEILING 
+--Ã–rnek - CEILING 
 
 SELECT CEILING(24.0001)
 
--- Örnek - CEILING Çýktý
+-- Ã–rnek - CEILING Ã‡Ä±ktÄ±
 /*
 |(No column name)  |
 |     25           |
 */
---Örnek - ROUND 
+--Ã–rnek - ROUND 
 
 SELECT ROUND(24.992,2) --1
 SELECT ROUND(24.999,0) --2
 
--- Örnek - ROUND Çýktý
+-- Ã–rnek - ROUND Ã‡Ä±ktÄ±
 /*
 |(No column name)  |  [1]
 |     24.990       |

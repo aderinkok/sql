@@ -1,61 +1,61 @@
--- Tarih Fonksiyonlarý
+ï»¿-- Tarih FonksiyonlarÄ±
 --syntax
 
  GETDATE()
  CURRENT_TIMESTAMP
  SYSDATETIME()
- DATEADD([TUR],[SAYI],[TARÝH])
+ DATEADD([TUR],[SAYI],[TARÄ°H])
  -- [TUR] parametresi MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH ya da YEAR olabilir. 
- DATEDIFF([TUR],[TARÝH1],[TARÝH2])
+ DATEDIFF([TUR],[TARÄ°H1],[TARÄ°H2])
  -- [TUR] parametresi MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH ya da YEAR olabilir.
- DATEPART([TUR],[TARÝH])
+ DATEPART([TUR],[TARÄ°H])
  -- [TUR] parametresi MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH ya da YEAR olabilir.
 
- --Örnek - GETDATE 
+ --Ã–rnek - GETDATE 
 
 SELECT GETDATE()
 
--- Örnek - GETDATE Çýktý
+-- Ã–rnek - GETDATE Ã‡Ä±ktÄ±
 /*
 |(No column name)         |
 | YYYY-AA-GG SS:DD:ss.xxx | 
 
-Komutun çalýþtýrýldýðý andaki tarih bilgisini YYYY-AA-GG SS:DD:ss.xxx formatýnda yazdýrýr.
+Komutun Ã§alÄ±ÅŸtÄ±rÄ±ldÄ±ÄŸÄ± andaki tarih bilgisini YYYY-AA-GG SS:DD:ss.xxx formatÄ±nda yazdÄ±rÄ±r.
 */
 
- --Örnek - CURRENT_TIMESTAMP 
+ --Ã–rnek - CURRENT_TIMESTAMP 
 
 SELECT CURRENT_TIMESTAMP
 
 
--- Örnek - CURRENT_TIMESTAMP Çýktý
+-- Ã–rnek - CURRENT_TIMESTAMP Ã‡Ä±ktÄ±
 /*
 |(No column name)         |
 | YYYY-AA-GG SS:DD:ss.xxx | 
 
-Komutun çalýþtýrýldýðý andaki tarih bilgisini YYYY-AA-GG SS:DD:ss.xxx formatýnda yazdýrýr.
+Komutun Ã§alÄ±ÅŸtÄ±rÄ±ldÄ±ÄŸÄ± andaki tarih bilgisini YYYY-AA-GG SS:DD:ss.xxx formatÄ±nda yazdÄ±rÄ±r.
 */
 
- --Örnek -  SYSDATETIME 
+ --Ã–rnek -  SYSDATETIME 
 
 SELECT  SYSDATETIME()
 
 
--- Örnek -  SYSDATETIME Çýktý
+-- Ã–rnek -  SYSDATETIME Ã‡Ä±ktÄ±
 /*
 |(No column name)         |
 | YYYY-AA-GG SS:DD:ss.xxxxxxx | 
 
-Komutun çalýþtýrýldýðý andaki tarih bilgisini YYYY-AA-GG SS:DD:ss.xxx formatýnda yazdýrýr.
+Komutun Ã§alÄ±ÅŸtÄ±rÄ±ldÄ±ÄŸÄ± andaki tarih bilgisini YYYY-AA-GG SS:DD:ss.xxx formatÄ±nda yazdÄ±rÄ±r.
 */
 
- --Örnek - DATEADD 
+ --Ã–rnek - DATEADD 
 
 SELECT DATEADD(YEAR,5,'2022-12-03')  --1
 SELECT DATEADD(MONTH,5,'2022-12-03') --2
 SELECT DATEADD(DAY,5,'2022-12-03')   --3
 SELECT DATEADD(MONTH,-5,'2022-01-01') --4
--- Örnek - DATEADD Çýktý
+-- Ã–rnek - DATEADD Ã‡Ä±ktÄ±
 /*
 |(No column name)         | [1]
 | 2027-12-03 00:00:00.000 | 
@@ -71,13 +71,13 @@ SELECT DATEADD(MONTH,-5,'2022-01-01') --4
 
 */
 
- --Örnek - DATEDIFF 
+ --Ã–rnek - DATEDIFF 
 
 SELECT DATEDIFF(YEAR,'2019-05-08','2022-12-03')  --1
 SELECT DATEDIFF(MONTH,'2019-05-08','2022-12-03') --2
 SELECT DATEDIFF(DAY,'2019-05-08','2022-12-03')   --3
 
--- Örnek - DATEDIFF Çýktý
+-- Ã–rnek - DATEDIFF Ã‡Ä±ktÄ±
 /*
 |(No column name) | [1]
 | 3               | 
@@ -90,13 +90,13 @@ SELECT DATEDIFF(DAY,'2019-05-08','2022-12-03')   --3
 
 */
 
- --Örnek - DATEPART 
+ --Ã–rnek - DATEPART 
 
 SELECT DATEPART(YEAR,'2022-12-03')    --1
 SELECT DATEPART(MONTH,'2022-12-03') --2
 SELECT DATEPART(DAY,'2022-12-03')   --3
 
--- Örnek - DATEPART Çýktý
+-- Ã–rnek - DATEPART Ã‡Ä±ktÄ±
 /*
 |(No column name) | [1]
 | 2022            | 

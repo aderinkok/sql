@@ -1,15 +1,15 @@
--- syntax
+ï»¿-- syntax
 
 
--- Veritabanı adı değiştirme
-SP_RENAME '[MEVCUT_AD]' ,'[YENİ_AD]' ,'database'
+-- VeritabanÄ± adÄ± deÄŸiÅŸtirme
+SP_RENAME '[MEVCUT_AD]' ,'[YENÄ°_AD]' ,'database'
 
 
--- Tablo adı değiştirme
-SP_RENAME '[TABLO_ADI]', '[YENİ_TABLO_ADI]'
--- Tablo adı değişikliğinde tablo adının tamamı dbo. ifadesi de [TABLO_ADI] alanında bulunmalıdır.
+-- Tablo adÄ± deÄŸiÅŸtirme
+SP_RENAME '[TABLO_ADI]', '[YENÄ°_TABLO_ADI]'
+-- Tablo adÄ± deÄŸiÅŸikliÄŸinde tablo adÄ±nÄ±n tamamÄ± dbo. ifadesi de [TABLO_ADI] alanÄ±nda bulunmalÄ±dÄ±r.
 
 
---Kolon adı değiştirme
+--Kolon adÄ± deÄŸiÅŸtirme
 
-SP_RENAME '[TABLO_ADI].[MEVCUT_KOLON_ADI]', '[YENİ_KOLON_ADI]', 'column'
+SP_RENAME '[TABLO_ADI].[MEVCUT_KOLON_ADI]', '[YENÄ°_KOLON_ADI]', 'column'

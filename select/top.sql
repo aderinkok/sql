@@ -1,30 +1,30 @@
--- Syntax 
+ï»¿-- Syntax 
 SELECT TOP [N] [KOLONLAR] FROM [TABLO_ADI] 
 
--- Tablodan yalnýzca [N] adet kaydý getirir.
+-- Tablodan yalnÄ±zca [N] adet kaydÄ± getirir.
 /*
 | id | ad        | soyad     | yas |
-|  1 | Ali       | Yýlmaz    |  19 |
+|  1 | Ali       | YÄ±lmaz    |  19 |
 |  2 | Ahmet     | Mutlu     |  18 |
-|  3 | Sare      | Aygün     |  21 |
-|  4 | Ayþe      | Demir     |  25 |
-|  5 | Abdulmelik| Derinkök  |  40 |
+|  3 | Sare      | AygÃ¼n     |  21 |
+|  4 | AyÅŸe      | Demir     |  25 |
+|  5 | Abdulmelik| DerinkÃ¶k  |  40 |
 */
--- Örnek – 1
+-- Ã–rnek â€“ 1
 
 SELECT TOP 1 * FROM kullanici 
-/* Örnek - 1 Çýktý 
+/* Ã–rnek - 1 Ã‡Ä±ktÄ± 
 | id | ad        | soyad     | yas |
-|  1 | Ali       | Yýlmaz    |  19 |
+|  1 | Ali       | YÄ±lmaz    |  19 |
 
 */
--- Örnek – 2
+-- Ã–rnek â€“ 2
 
 SELECT TOP 3 * FROM kullanici 
-/* Örnek - 1 Çýktý
+/* Ã–rnek - 1 Ã‡Ä±ktÄ±
 | id | ad        | soyad     | yas |
-|  1 | Ali       | Yýlmaz    |  19 |
+|  1 | Ali       | YÄ±lmaz    |  19 |
 |  2 | Ahmet     | Mutlu     |  18 |
-|  3 | Sare      | Aygün     |  21 |
+|  3 | Sare      | AygÃ¼n     |  21 |
 */
 

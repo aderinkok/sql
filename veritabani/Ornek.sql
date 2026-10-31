@@ -1,14 +1,14 @@
-/*
+ï»¿/*
 KURULUM DETAYLARI
-- İmleç bu sayfada iken "Execute" butonu veya F5 tuşu ile sayfadaki sorgular işletilir.
-- Sorgular işletildikten sonra "Ornek" veritabanı, tabloları ve verileri oluşturuldu." mesajı çıktı olarak görülmelidir.
-- Hata alınması durumunda sık karşılaşılan durum veritabanının ilgili sunucuda var olması ve seçili olmasından kaynaklı silme işlemenin gerçekleştirilememesidir.
-- CTRL + U seçeneği ile ya da "Execute" butonunun sol tarafında aktif/seçili durumda olan veritabanı tüm çalışma sayfalarında "Ornek" dışında bir seçeneğe ayarlanarak sayfa tekrar çalıştırılmalıdır.
+- Ä°mleÃ§ bu sayfada iken "Execute" butonu veya F5 tuÅŸu ile sayfadaki sorgular iÅŸletilir.
+- Sorgular iÅŸletildikten sonra "Ornek" veritabanÄ±, tablolarÄ± ve verileri oluÅŸturuldu." mesajÄ± Ã§Ä±ktÄ± olarak gÃ¶rÃ¼lmelidir.
+- Hata alÄ±nmasÄ± durumunda sÄ±k karÅŸÄ±laÅŸÄ±lan durum veritabanÄ±nÄ±n ilgili sunucuda var olmasÄ± ve seÃ§ili olmasÄ±ndan kaynaklÄ± silme iÅŸlemenin gerÃ§ekleÅŸtirilememesidir.
+- CTRL + U seÃ§eneÄŸi ile ya da "Execute" butonunun sol tarafÄ±nda aktif/seÃ§ili durumda olan veritabanÄ± tÃ¼m Ã§alÄ±ÅŸma sayfalarÄ±nda "Ornek" dÄ±ÅŸÄ±nda bir seÃ§eneÄŸe ayarlanarak sayfa tekrar Ã§alÄ±ÅŸtÄ±rÄ±lmalÄ±dÄ±r.
 
 
 
  -------------------------------
-|Ornek veritabanı  - 2022      |
+|Ornek veritabanÄ±  - 2022      |
 |--Update 03.11.25             |
  -------------------------------
 _________________________
@@ -68,26 +68,26 @@ CREATE TABLE [ogrenci] (
 
 INSERT [ogrenci] ([ad], [soyad], [bolum], [ortalama], [dogum_yeri], [yas]) 
 VALUES
-(N''Ahmet'', N''Ünlü'',N''Bilgisayar'',65,N''Malatya'',19),
-(N''Mehmet'', N''Yılmaz'',N''Elektrik'',78,N''Bilecik'',20),
-(N''Ayşe'', N''Demir'',N''Muhasebe'',65,N''Eskişehir'',20),
-(N''Ali'', N''Şahin'',N''Bilgisayar'',80,N''Malatya'',21),
-(N''Musa'', N''Taş'',N''Elektrik'',55,N''Malatya'',19),
-(N''Yaprak'', N''Göl'',N''Bilgisayar'',60,N''Bilecik'',19),
-(N''Yiğit'', N''Yıldırım'',N''Bilgisayar'',82,N''Malatya'',20),
-(N''Can'', N''Yiğit'',N''Elektrik'',90,N''Bilecik'',19),
-(N''Meral'', N''Yiğiter'',N''Muhasebe'',85,N''Malatya'',21);
+(N''Ahmet'', N''ÃœnlÃ¼'',N''Bilgisayar'',65,N''Malatya'',19),
+(N''Mehmet'', N''YÄ±lmaz'',N''Elektrik'',78,N''Bilecik'',20),
+(N''AyÅŸe'', N''Demir'',N''Muhasebe'',65,N''EskiÅŸehir'',20),
+(N''Ali'', N''Åahin'',N''Bilgisayar'',80,N''Malatya'',21),
+(N''Musa'', N''TaÅŸ'',N''Elektrik'',55,N''Malatya'',19),
+(N''Yaprak'', N''GÃ¶l'',N''Bilgisayar'',60,N''Bilecik'',19),
+(N''YiÄŸit'', N''YÄ±ldÄ±rÄ±m'',N''Bilgisayar'',82,N''Malatya'',20),
+(N''Can'', N''YiÄŸit'',N''Elektrik'',90,N''Bilecik'',19),
+(N''Meral'', N''YiÄŸiter'',N''Muhasebe'',85,N''Malatya'',21);
 ';
 
 
 EXEC sp_executesql @SQL_Setup;
 
-PRINT('"Ornek" veritabanı, tabloları ve verileri oluşturuldu.')
+PRINT('"Ornek" veritabanÄ±, tablolarÄ± ve verileri oluÅŸturuldu.')
 
 END TRY
 BEGIN CATCH
    
-    PRINT('!!! HATA OLUŞTU !!!');
+    PRINT('!!! HATA OLUÅTU !!!');
     SELECT 
         ERROR_NUMBER() AS ErrorNumber,
         ERROR_STATE() AS ErrorState,

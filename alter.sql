@@ -1,4 +1,4 @@
---syntax
+ï»¿--syntax
 
 ALTER [TUR] [NESNE_ADI] [PARAMETRELER]
 
@@ -12,10 +12,10 @@ Name = 'dbAdi',
 Size = 12
 )
 
-/* --ALTER DATABASE - 1 - ÇIKTI 
+/* --ALTER DATABASE - 1 - Ã‡IKTI 
 Commands completed successfully.
 
-- Mevcut veritabanı yapılandırmasında değişiklik yapılacağı zaman Name parametresinin belirtilmesi gerekmetedir. Örnekte CREATE bölümünde oluşturulan veritabanının boyutu değiştirilmiştir.
+- Mevcut veritabanÄ± yapÄ±landÄ±rmasÄ±nda deÄŸiÅŸiklik yapÄ±lacaÄŸÄ± zaman Name parametresinin belirtilmesi gerekmetedir. Ã–rnekte CREATE bÃ¶lÃ¼mÃ¼nde oluÅŸturulan veritabanÄ±nÄ±n boyutu deÄŸiÅŸtirilmiÅŸtir.
 
 
 */
@@ -27,10 +27,10 @@ ADD
 memleket VARCHAR(50),
 yas INT
 
-/* --ALTER DATABASE - 1 - ÇIKTI 
+/* --ALTER DATABASE - 1 - Ã‡IKTI 
 Commands completed successfully.
 
-- CREATE bölümünde oluşturulan personel tablosuna memleket ve yas kolonları oluşturulmuştur.
+- CREATE bÃ¶lÃ¼mÃ¼nde oluÅŸturulan personel tablosuna memleket ve yas kolonlarÄ± oluÅŸturulmuÅŸtur.
 
 */
 
@@ -39,10 +39,10 @@ ALTER TABLE personel
 ALTER COLUMN 
 memleket NVARCHAR(50)
 
-/* --ALTER DATABASE - 2 - ÇIKTI 
+/* --ALTER DATABASE - 2 - Ã‡IKTI 
 Commands completed successfully.
 
-- CREATE bölümünde oluşturulan personel tablosunda bulunan memleket kolonunun veri türü nvarchar olarak değiştirilmiştir.
+- CREATE bÃ¶lÃ¼mÃ¼nde oluÅŸturulan personel tablosunda bulunan memleket kolonunun veri tÃ¼rÃ¼ nvarchar olarak deÄŸiÅŸtirilmiÅŸtir.
 
 */
 
@@ -50,10 +50,10 @@ Commands completed successfully.
 ALTER TABLE personel
 DROP COLUMN memleket,yas
 
-/* --ALTER DATABASE - 3 - ÇIKTI 
+/* --ALTER DATABASE - 3 - Ã‡IKTI 
 Commands completed successfully.
 
-- personel tablosunda bulunan memleket ve yas kolonları silinmiştir.
+- personel tablosunda bulunan memleket ve yas kolonlarÄ± silinmiÅŸtir.
 
 */
 

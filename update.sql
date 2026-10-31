@@ -1,55 +1,55 @@
---syntax
+ï»¿--syntax
 
-UPDATE [TABLO_ADI] SET [KOLON1] = [DEÐER1], [KOLON2] = [DEÐER2],...,[KOLONn] = [DEÐERn] WHERE [ÞART]
+UPDATE [TABLO_ADI] SET [KOLON1] = [DEÄžER1], [KOLON2] = [DEÄžER2],...,[KOLONn] = [DEÄžERn] WHERE [ÅžART]
 
 /*
-- DÝKKAT: UPDATE komutu yazýldýktan sonra WHERE ifadesi ile þart belirtilmezse veri güncellemesi yapýlacak kolonlardaki tüm veriler deðiþir.
+- DÄ°KKAT: UPDATE komutu yazÄ±ldÄ±ktan sonra WHERE ifadesi ile ÅŸart belirtilmezse veri gÃ¼ncellemesi yapÄ±lacak kolonlardaki tÃ¼m veriler deÄŸiÅŸir.
 
  - ogrenciler tablosu
 
 | id | ad            | soyad      | sinif | vize | final |
-|  1 | Ali           | Yýlmaz     |  1    | 65   | 82    |
+|  1 | Ali           | YÄ±lmaz     |  1    | 65   | 82    |
 |  2 | Ahmet         | Mutlu      |  1    | 30   | 45    |
-|  3 | Asel Sare     | Aygün      |  2    | 85   | 79    |
-|  4 | Ayþe          | Demir      |  2    | 55   | 63    |
-|  5 | Abdulmelik    | Derinkök   |  2    | 100  | 100   |
-|  6 | Muhammed Yaðýz| Mutlu      |  2    | 95   | 68    |
-|  7 | Elif Eylül    | Mutlu      |  2    | 90   | 90    |
+|  3 | Asel Sare     | AygÃ¼n      |  2    | 85   | 79    |
+|  4 | AyÅŸe          | Demir      |  2    | 55   | 63    |
+|  5 | Abdulmelik    | DerinkÃ¶k   |  2    | 100  | 100   |
+|  6 | Muhammed YaÄŸÄ±z| Mutlu      |  2    | 95   | 68    |
+|  7 | Elif EylÃ¼l    | Mutlu      |  2    | 90   | 90    |
 
 */
---Örnek - 1
+--Ã–rnek - 1
 UPDATE ogrenciler SET ad='Mehmet' WHERE id=2
 
-/* Örnek - 1 Çýktý
+/* Ã–rnek - 1 Ã‡Ä±ktÄ±
 (1 row affected)
- -- Tablo olarak çýktý vermez ancak bilgi mesajý olarak etkilenen satýr sayýsýný yazdýrýr.
+ -- Tablo olarak Ã§Ä±ktÄ± vermez ancak bilgi mesajÄ± olarak etkilenen satÄ±r sayÄ±sÄ±nÄ± yazdÄ±rÄ±r.
 
-  Ýþlemden sonra ogrenciler tablosu:
+  Ä°ÅŸlemden sonra ogrenciler tablosu:
 | id | ad            | soyad      | sinif | vize | final |
-|  1 | Ali           | Yýlmaz     |  1    | 65   | 82    |
+|  1 | Ali           | YÄ±lmaz     |  1    | 65   | 82    |
 |  2 | Mehmet        | Mutlu      |  1    | 30   | 45    |
-|  3 | Asel Sare     | Aygün      |  2    | 85   | 79    |
-|  4 | Ayþe          | Demir      |  2    | 55   | 63    |
-|  5 | Abdulmelik    | Derinkök   |  2    | 100  | 100   |
-|  6 | Muhammed Yaðýz| Mutlu      |  2    | 95   | 68    |
-|  7 | Elif Eylül    | Mutlu      |  2    | 90   | 90    |
+|  3 | Asel Sare     | AygÃ¼n      |  2    | 85   | 79    |
+|  4 | AyÅŸe          | Demir      |  2    | 55   | 63    |
+|  5 | Abdulmelik    | DerinkÃ¶k   |  2    | 100  | 100   |
+|  6 | Muhammed YaÄŸÄ±z| Mutlu      |  2    | 95   | 68    |
+|  7 | Elif EylÃ¼l    | Mutlu      |  2    | 90   | 90    |
 
 */
---Örnek - 2
+--Ã–rnek - 2
 UPDATE ogrenciler SET ad='Veli'
 
-/* Örnek - 2 Çýktý
+/* Ã–rnek - 2 Ã‡Ä±ktÄ±
 
 (7 rows affected)
- -- Tablo olarak çýktý vermez ancak bilgi mesajý olarak etkilenen satýr sayýsýný yazdýrýr.
+ -- Tablo olarak Ã§Ä±ktÄ± vermez ancak bilgi mesajÄ± olarak etkilenen satÄ±r sayÄ±sÄ±nÄ± yazdÄ±rÄ±r.
 
-  Ýþlemden sonra ogrenciler tablosu:
+  Ä°ÅŸlemden sonra ogrenciler tablosu:
 | id | ad   | soyad      | sinif | vize | final |
-|  1 | Veli | Yýlmaz     |  1    | 65   | 82    |
+|  1 | Veli | YÄ±lmaz     |  1    | 65   | 82    |
 |  2 | Veli | Mutlu      |  1    | 30   | 45    |
-|  3 | Veli | Aygün      |  2    | 85   | 79    |
+|  3 | Veli | AygÃ¼n      |  2    | 85   | 79    |
 |  4 | Veli | Demir      |  2    | 55   | 63    |
-|  5 | Veli | Derinkök   |  2    | 100  | 100   |
+|  5 | Veli | DerinkÃ¶k   |  2    | 100  | 100   |
 |  6 | Veli | Mutlu      |  2    | 95   | 68    |
 |  7 | Veli | Mutlu      |  2    | 90   | 90    |
 */

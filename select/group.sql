@@ -1,56 +1,56 @@
--- Aggregate fonksiyonlar
+ï»¿-- Aggregate fonksiyonlar
 /* ogrenciler
 | id | ad            | soyad      | sinif | vize | final |
-|  1 | Ali           | Yılmaz     |  1    | 65   | 82    |
+|  1 | Ali           | YÄ±lmaz     |  1    | 65   | 82    |
 |  2 | Ahmet         | Mutlu      |  1    | 30   | 45    |
-|  3 | Asel Sare     | Aygün      |  2    | 85   | 79    |
-|  4 | Ayşe          | Demir      |  2    | 55   | 63    |
-|  5 | Abdulmelik    | Derinkök   |  2    | 100  | 100   |
-|  5 | Muhammed Yağız| Mutlu      |  2    | 95   | 68    |
-|  5 | Elif Eylül    | Mutlu      |  2    | 90   | 90    |
+|  3 | Asel Sare     | AygÃ¼n      |  2    | 85   | 79    |
+|  4 | AyÅŸe          | Demir      |  2    | 55   | 63    |
+|  5 | Abdulmelik    | DerinkÃ¶k   |  2    | 100  | 100   |
+|  5 | Muhammed YaÄŸÄ±z| Mutlu      |  2    | 95   | 68    |
+|  5 | Elif EylÃ¼l    | Mutlu      |  2    | 90   | 90    |
 */
--- Örnek – 1 COUNT
+-- Ã–rnek â€“ 1 COUNT
 
 SELECT COUNT(*) FROM ogrenciler
 SELECT COUNT(ad) FROM ogrenciler
---Örnek -1 Açıklama: Tablodaki kayıt sayısını dönderir. Örnek tabloda toplam 7 kayıt bulunmaktadır. Örnek 1'de yer alan sorgularda herhangi bir koşul belirtilmediğinden COUNT fonksiyonunun içine hangi değer girilirse girilsin aynı sonucu verecektir.
-/* Örnek - 1 Çıktı 
+--Ã–rnek -1 AÃ§Ä±klama: Tablodaki kayÄ±t sayÄ±sÄ±nÄ± dÃ¶nderir. Ã–rnek tabloda toplam 7 kayÄ±t bulunmaktadÄ±r. Ã–rnek 1'de yer alan sorgularda herhangi bir koÅŸul belirtilmediÄŸinden COUNT fonksiyonunun iÃ§ine hangi deÄŸer girilirse girilsin aynÄ± sonucu verecektir.
+/* Ã–rnek - 1 Ã‡Ä±ktÄ± 
 (No Column Name)
 7
 
 
 */
--- Örnek – 2 SUM
+-- Ã–rnek â€“ 2 SUM
 
 SELECT SUM(vize) FROM ogrenciler 
---Örnek - 2 Açıklama: Tablodaki vize sütununda yer alan tüm kayıtları toplar ve sonucu ekrana yazdırır. İlgili tablodaki vize sütununda yer alan kayıtların toplamı 520'dir.
-/* Örnek - 2 Çıktı
+--Ã–rnek - 2 AÃ§Ä±klama: Tablodaki vize sÃ¼tununda yer alan tÃ¼m kayÄ±tlarÄ± toplar ve sonucu ekrana yazdÄ±rÄ±r. Ä°lgili tablodaki vize sÃ¼tununda yer alan kayÄ±tlarÄ±n toplamÄ± 520'dir.
+/* Ã–rnek - 2 Ã‡Ä±ktÄ±
 (No Column Name)
 520
 */
--- Örnek – 3 MIN
+-- Ã–rnek â€“ 3 MIN
 
 SELECT MIN(vize) FROM ogrenciler 
---Örnek - 3 Açıklama: Tablodaki vize sütununda yer alan tüm kayıtları karşılaştırır ve en düşük olan değeri yazdırır. İlgili tablodaki en düşük vize değeri 30'dur.
-/* Örnek - 3 Çıktı
+--Ã–rnek - 3 AÃ§Ä±klama: Tablodaki vize sÃ¼tununda yer alan tÃ¼m kayÄ±tlarÄ± karÅŸÄ±laÅŸtÄ±rÄ±r ve en dÃ¼ÅŸÃ¼k olan deÄŸeri yazdÄ±rÄ±r. Ä°lgili tablodaki en dÃ¼ÅŸÃ¼k vize deÄŸeri 30'dur.
+/* Ã–rnek - 3 Ã‡Ä±ktÄ±
 (No Column Name)
 30
 */
--- Örnek – 4 MAX
+-- Ã–rnek â€“ 4 MAX
 
 SELECT MAX(final) FROM ogrenciler 
---Örnek - 4 Açıklama: Tablodaki final sütununda yer alan tüm kayıtları karşılaştırır ve en yüksek olan değeri yazdırır. İlgili tablodaki en yüksek final değeri 100'dür.
-/* Örnek - 4 Çıktı
+--Ã–rnek - 4 AÃ§Ä±klama: Tablodaki final sÃ¼tununda yer alan tÃ¼m kayÄ±tlarÄ± karÅŸÄ±laÅŸtÄ±rÄ±r ve en yÃ¼ksek olan deÄŸeri yazdÄ±rÄ±r. Ä°lgili tablodaki en yÃ¼ksek final deÄŸeri 100'dÃ¼r.
+/* Ã–rnek - 4 Ã‡Ä±ktÄ±
 (No Column Name)
 100
 */
 
--- Örnek – 5 AVG
+-- Ã–rnek â€“ 5 AVG
 
 SELECT AVG(final) FROM ogrenciler 
---Örnek - 5 Açıklama: Tablodaki final sütununda yer alan tüm kayıtları toplar ve satır sayısına böler yani aritmetik ortalamasını alır. İlgili tablodaki final kolonunda yer alan değerlerin ortalaması değeri 75'tir.
--- 75,xx şeklinde bir sonuç olmasına rağmen elde edilen ifade tam sayı olarak ekrana yazdırılmıştır.
-/* Örnek - 5 Çıktı
+--Ã–rnek - 5 AÃ§Ä±klama: Tablodaki final sÃ¼tununda yer alan tÃ¼m kayÄ±tlarÄ± toplar ve satÄ±r sayÄ±sÄ±na bÃ¶ler yani aritmetik ortalamasÄ±nÄ± alÄ±r. Ä°lgili tablodaki final kolonunda yer alan deÄŸerlerin ortalamasÄ± deÄŸeri 75'tir.
+-- 75,xx ÅŸeklinde bir sonuÃ§ olmasÄ±na raÄŸmen elde edilen ifade tam sayÄ± olarak ekrana yazdÄ±rÄ±lmÄ±ÅŸtÄ±r.
+/* Ã–rnek - 5 Ã‡Ä±ktÄ±
 (No Column Name)
 75
 */
@@ -59,18 +59,18 @@ SELECT AVG(final) FROM ogrenciler
 SELECT [KOLON_X],AGGREGATE_FONKSIYON([KOLON]) FROM [TABLO_ADI] GROUP BY [KOLON_X] 
 SELECT [KOLON_X],AGGREGATE_FONKSIYON([KOLON]) FROM [TABLO_ADI] GROUP BY [KOLON_X] HAVING  AGGREGATE_FONKSIYON([KOLON]) [OPERATOR] [KOSUL]
 
--- AGGREGATE_FONKSIYON alanına SUM,MIN,MAX,AVG,COUNT ifadeleri getirilebilir.
--- [KOLON_X] ifadesi gruplandırılacak kolon manasına gelmektedir.
+-- AGGREGATE_FONKSIYON alanÄ±na SUM,MIN,MAX,AVG,COUNT ifadeleri getirilebilir.
+-- [KOLON_X] ifadesi gruplandÄ±rÄ±lacak kolon manasÄ±na gelmektedir.
 -- HAVING ifadesinde yer alan [OPERATOR] <,>,=,<>,<=,>= ifadelerinde biri olabilir.
--- Örnek HAVING COUNT(*) < 5 
--- Eğer sorguda WHERE ifadesi kullanılacaksa GROUP BY ifadesinden önce yazılmalıdır.
+-- Ã–rnek HAVING COUNT(*) < 5 
+-- EÄŸer sorguda WHERE ifadesi kullanÄ±lacaksa GROUP BY ifadesinden Ã¶nce yazÄ±lmalÄ±dÄ±r.
 
 
---Örnek 6 
+--Ã–rnek 6 
 SELECT sinif,COUNT(*) FROM ogrenciler GROUP BY sinif
 
---Örnek -6 Açıklama: sinif kolonuna göre gruplandırma işlemi bulunmaktadır. sınıf kolonu 1 değerinde olan 2 kayıt ve sınıf kolonu 2 değerinde olan 5 kayıt bulunmaktadır. 
-/*Örnek - 6 Çıktı
+--Ã–rnek -6 AÃ§Ä±klama: sinif kolonuna gÃ¶re gruplandÄ±rma iÅŸlemi bulunmaktadÄ±r. sÄ±nÄ±f kolonu 1 deÄŸerinde olan 2 kayÄ±t ve sÄ±nÄ±f kolonu 2 deÄŸerinde olan 5 kayÄ±t bulunmaktadÄ±r. 
+/*Ã–rnek - 6 Ã‡Ä±ktÄ±
 
  | sinif |(No Column Name)|
  |    1  |        2       |
@@ -78,13 +78,13 @@ SELECT sinif,COUNT(*) FROM ogrenciler GROUP BY sinif
 
 */
 
---Örnek 6 
+--Ã–rnek 6 
 SELECT sinif,AVG(vize) FROM ogrenciler GROUP BY sinif HAVING AVG(vize) > 50
 
---Örnek -6 Açıklama: sinif kolonuna göre gruplandırma işlemi bulunmaktadır. Sınıf kolonu aynı olan kayıtların vize notlarının aritmetik ortalaması alınır ve having ifadesinde de ortalama değeri 50'den büyük olan sınıflar gösterilir.
--- sınıf değeri 1 olan kayıtların vize ortalaması 47 olduğu için şarta uygunluk taşımaz bu nedenle de listelenmez.
--- sınıf değeri 2 olan kayıtların vize ortalaması ise 85'tir ve şarta uygunluk sağladığı için listelenir.
-/*Örnek - 6 Çıktı
+--Ã–rnek -6 AÃ§Ä±klama: sinif kolonuna gÃ¶re gruplandÄ±rma iÅŸlemi bulunmaktadÄ±r. SÄ±nÄ±f kolonu aynÄ± olan kayÄ±tlarÄ±n vize notlarÄ±nÄ±n aritmetik ortalamasÄ± alÄ±nÄ±r ve having ifadesinde de ortalama deÄŸeri 50'den bÃ¼yÃ¼k olan sÄ±nÄ±flar gÃ¶sterilir.
+-- sÄ±nÄ±f deÄŸeri 1 olan kayÄ±tlarÄ±n vize ortalamasÄ± 47 olduÄŸu iÃ§in ÅŸarta uygunluk taÅŸÄ±maz bu nedenle de listelenmez.
+-- sÄ±nÄ±f deÄŸeri 2 olan kayÄ±tlarÄ±n vize ortalamasÄ± ise 85'tir ve ÅŸarta uygunluk saÄŸladÄ±ÄŸÄ± iÃ§in listelenir.
+/*Ã–rnek - 6 Ã‡Ä±ktÄ±
 
  | sinif |(No Column Name)|
  |    2  |        85       |

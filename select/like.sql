@@ -1,97 +1,138 @@
--- Syntax
+ï»¿-- Syntax
 
-SELECT [KOLONLAR] FROM [TABLO_ADI] WHERE [KOŞUL] LIKE '[ARAMA_DESENI]'
--- WHERE ifadesinden sonraki "[KOŞUL] LIKE '[ARAMA_DESENI]'" alanından sonra çoklu filtreleme yapılacaksa AND/OR bağlaçları kullanılabilir.
+SELECT [KOLONLAR] FROM [TABLO_ADI] WHERE [KOÅUL] LIKE '[ARAMA_DESENI]'
+-- WHERE ifadesinden sonraki "[KOÅUL] LIKE '[ARAMA_DESENI]'" alanÄ±ndan sonra Ã§oklu filtreleme yapÄ±lacaksa AND/OR baÄŸlaÃ§larÄ± kullanÄ±labilir.
 
 -- il tablosu 
 /*
 | id | ad            |
 |  1 | Adana         | 
-|  2 | Adıyaman      | 
+|  2 | AdÄ±yaman      | 
 |  3 | Afyonkarahisar|
 ...
 |  11 | Bilecik      |
 ...
 |  44 | Malatya      |
 ...
-|  81 | Düzce        |
+|  81 | DÃ¼zce        |
 */
 
---Örnek - 1
+--Ã–rnek - 1
 SELECT * FROM il  WHERE ad LIKE 'Bi%'
--- Örnek 1: ad özelliği "Bi" ile başlayan kayıtları çeker.
-/* Örnek - 1 Çıktı
+-- Ã–rnek 1: ad Ã¶zelliÄŸi "Bi" ile baÅŸlayan kayÄ±tlarÄ± Ã§eker.
+/* Ã–rnek - 1 Ã‡Ä±ktÄ±
 | id  | ad     |
 |  11 | Bilecik| 
-|  12 | Bingöl | 
+|  12 | BingÃ¶l | 
 |  13 | Bitlis |
 
 */
 
---Örnek - 2
+--Ã–rnek - 2
 SELECT * FROM il WHERE ad LIKE 'MA%A'
--- Örnek 2: ad özelliği "Ma" ile başlayan ve "a" ile biten kayıtları çeker.
-/* Örnek - 2 Çıktı
+-- Ã–rnek 2: ad Ã¶zelliÄŸi "Ma" ile baÅŸlayan ve "a" ile biten kayÄ±tlarÄ± Ã§eker.
+/* Ã–rnek - 2 Ã‡Ä±ktÄ±
 | id  | ad     |
 |  44 | Malatya| 
 |  45 | Manisa | 
 
 
 */
---Örnek - 3 
+--Ã–rnek - 3 
 SELECT * FROM il WHERE ad LIKE 'MA____A'
--- Örnek 3: ad özelliği "Ma" ile başlayan ve "a" ile biten ve uzunluğu 7 karakter olan kayıtları çeker.
-/* Örnek - 3 Çıktı
+-- Ã–rnek 3: ad Ã¶zelliÄŸi "Ma" ile baÅŸlayan ve "a" ile biten ve uzunluÄŸu 7 karakter olan kayÄ±tlarÄ± Ã§eker.
+/* Ã–rnek - 3 Ã‡Ä±ktÄ±
 | id  | ad     |
 |  44 | Malatya| 
 
 */
---Örnek - 4
+--Ã–rnek - 4
 
 SELECT * FROM il WHERE ad LIKE '%E_A%'
--- Örnek 4: ad özelliğinin herhangi bir yerinde "e" ile başlayıp "a" ile biten 3 karakter uzunluğunda ifade barındıran kayıtları çeker.
-/* Örnek - 4 Çıktı
+-- Ã–rnek 4: ad Ã¶zelliÄŸinin herhangi bir yerinde "e" ile baÅŸlayÄ±p "a" ile biten 3 karakter uzunluÄŸunda ifade barÄ±ndÄ±ran kayÄ±tlarÄ± Ã§eker.
+/* Ã–rnek - 4 Ã‡Ä±ktÄ±
 | id  | ad     |
-|  23 | Elazığ | 
+|  23 | ElazÄ±ÄŸ | 
 
 */
---Örnek -5
-SELECT * FROM il WHERE ad LIKE '%ğ%'
--- Örnek 5: ad özelliğinde "ğ" bulunan kayıtları çeker.
-/* Örnek -5 Çıktı
+--Ã–rnek -5
+SELECT * FROM il WHERE ad LIKE '%ÄŸ%'
+-- Ã–rnek 5: ad Ã¶zelliÄŸinde "ÄŸ" bulunan kayÄ±tlarÄ± Ã§eker.
+/* Ã–rnek -5 Ã‡Ä±ktÄ±
 | id  | ad      |
-| 4	  | Ağrı	|
-|23	  | Elazığ	|
-|48	  | Muğla	|
-|51	  | Niğde	|
-|59	  | Tekirdağ|	
-|76	  | Iğdır	|
+| 4	  | AÄŸrÄ±	|
+|23	  | ElazÄ±ÄŸ	|
+|48	  | MuÄŸla	|
+|51	  | NiÄŸde	|
+|59	  | TekirdaÄŸ|	
+|76	  | IÄŸdÄ±r	|
 */
 
---Örnek -6
+--Ã–rnek -6
 SELECT * FROM il WHERE ad LIKE '%[ke]'
--- Örnek 6: ad özelliği "k" veya "e" ile biten kayıtları çeker.
-/* Örnek - 6 Çıktı
+-- Ã–rnek 6: ad Ã¶zelliÄŸi "k" veya "e" ile biten kayÄ±tlarÄ± Ã§eker.
+/* Ã–rnek - 6 Ã‡Ä±ktÄ±
 | id    | ad      |
 |11		|Bilecik  |	
-|17		|Çanakkale|	
+|17		|Ã‡anakkale|	
 |22		|Edirne	  |
-|29		|Gümüşhane|	
-|51  	|Niğde	  |
+|29		|GÃ¼mÃ¼ÅŸhane|	
+|51  	|NiÄŸde	  |
 |53		|Rize	  |
-|64	    |Uşak	  |
+|64	    |UÅŸak	  |
 |67		|Zonguldak|	
-|71	    |Kırıkkale|	
-|73     |Şırnak	  |
-|78  	|Karabük  |
+|71	    |KÄ±rÄ±kkale|	
+|73     |ÅÄ±rnak	  |
+|78  	|KarabÃ¼k  |
 |80		|Osmaniye |
-|81		|Düzce	  |
+|81		|DÃ¼zce	  |
 */
--- Örnek - 7 
+-- Ã–rnek - 7 
 SELECT * FROM il WHERE ad LIKE '[^a-y]%'
--- Örnek 7: ad özelliği "a-y" aralığındaki karakterlerle BAŞLAMAYAN kayıtları çeker.
-/* Örnek - 7 Çıktı
+-- Ã–rnek 7: ad Ã¶zelliÄŸi "a-y" aralÄ±ÄŸÄ±ndaki karakterlerle BAÅLAMAYAN kayÄ±tlarÄ± Ã§eker.
+/* Ã–rnek - 7 Ã‡Ä±ktÄ±
 | id  | ad       |
-|  77 | Zonguldak| 
+|  77 | Zonguldak|
 
+*/
+
+-- Ã–rnek - 8 (SÄ±k yapÄ±lan hata)
+-- Ornek veritabanÄ± ogrenci tablosu (veritabani/Ornek.sql betiÄŸi ile oluÅŸturulur.)
+/*
+| id | ad     |
+|  1 | Ahmet  |
+|  2 | Mehmet |
+|  3 | AyÅŸe   |
+|  4 | Ali    |
+|  5 | Musa   |
+|  6 | Yaprak |
+|  7 | YiÄŸit  |
+|  8 | Can    |
+|  9 | Meral  |
+*/
+SELECT * FROM ogrenci WHERE ad LIKE '[^Y]%a%'
+-- Ã–rnek 8: AmaÃ§ ad Ã¶zelliÄŸi "Y" ile baÅŸlamayan ve iÃ§inde "a" bulunan kayÄ±tlarÄ± Ã§ekmektir. Ancak "a" ile baÅŸlayan Ahmet, AyÅŸe ve Ali kayÄ±tlarÄ± listelenmez.
+/* Ã–rnek - 8 Ã‡Ä±ktÄ±
+| id  | ad    |
+|  5  | Musa  |
+|  8  | Can   |
+|  9  | Meral |
+*/
+-- NEDEN: [^Y] ifadesi "Y dÄ±ÅŸÄ±ndaki TEK bir karakter" anlamÄ±na gelir ve adÄ±n ilk harfini karÅŸÄ±lar.
+-- Desenin devamÄ±ndaki %a% ifadesi ise ilk harften SONRA gelen bir "a" arar. Ahmet, AyÅŸe ve Ali kayÄ±tlarÄ±ndaki "a" ilk harf olduÄŸu iÃ§in [^Y] tarafÄ±ndan
+-- karÅŸÄ±lanÄ±r; adÄ±n geri kalanÄ±nda (hmet, yÅŸe, li) ikinci bir "a" bulunmadÄ±ÄŸÄ±ndan bu kayÄ±tlar listelenmez.
+-- Ã‡Ã–ZÃœM: Ä°lk harf kontrolÃ¼ ile "a" aramasÄ± birbirinden ayrÄ±lmalÄ±dÄ±r. AÅŸaÄŸÄ±daki sorgularÄ±n tamamÄ± aynÄ± (doÄŸru) Ã§Ä±ktÄ±yÄ± verir.
+SELECT * FROM ogrenci WHERE ad LIKE '[^Y]%' AND ad LIKE '%a%'          -- Ã‡Ã¶zÃ¼m 1: Desen iki ayrÄ± koÅŸula bÃ¶lÃ¼nÃ¼r.
+SELECT * FROM ogrenci WHERE ad NOT LIKE 'Y%' AND ad LIKE '%a%'         -- Ã‡Ã¶zÃ¼m 2: Ä°lk harf kontrolÃ¼ NOT LIKE ile yapÄ±lÄ±r.
+SELECT * FROM ogrenci WHERE ad LIKE '[^Y]%a%' OR ad LIKE 'a%'          -- Ã‡Ã¶zÃ¼m 3: Desenin kaÃ§Ä±rdÄ±ÄŸÄ± "a ile baÅŸlayan" kayÄ±tlar OR ile eklenir.
+SELECT * FROM ogrenci WHERE LEFT(ad,1)<>'Y' AND ad LIKE '%a%'          -- Ã‡Ã¶zÃ¼m 4: Ä°lk harf LEFT fonksiyonu ile kontrol edilir.
+SELECT * FROM ogrenci WHERE ad NOT LIKE 'Y%' AND CHARINDEX('a',ad)>0   -- Ã‡Ã¶zÃ¼m 5: "a" harfi CHARINDEX fonksiyonu ile aranÄ±r (harf bulunamazsa 0 dÃ¶ner).
+/* Ã‡Ã¶zÃ¼m Ã‡Ä±ktÄ±sÄ±
+| id  | ad    |
+|  1  | Ahmet |
+|  3  | AyÅŸe  |
+|  4  | Ali   |
+|  5  | Musa  |
+|  8  | Can   |
+|  9  | Meral |
 */

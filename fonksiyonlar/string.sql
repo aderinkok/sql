@@ -1,110 +1,110 @@
--- String Fonksiyonlar
+ï»¿-- String Fonksiyonlar
 
 --syntax
 
- LOWER('[METÝN]')
- UPPER('[METÝN]')
- LEFT('[METÝN]',[SAYI])
- RIGHT('[METÝN]',[SAYI])
- LTRIM('[METÝN]')
- RTRIM('[METÝN]')
- SUBSTRING('[METÝN]',[INDEX],[UZUNLUK])
- CHARINDEX('[KARAKTER]','[METÝN]')
- REVERSE('[METÝN]')
- REPLACE('[METÝN]','[ARANAN_DEÐER]','[YENÝ_DEÐER]')
+ LOWER('[METÄ°N]')
+ UPPER('[METÄ°N]')
+ LEFT('[METÄ°N]',[SAYI])
+ RIGHT('[METÄ°N]',[SAYI])
+ LTRIM('[METÄ°N]')
+ RTRIM('[METÄ°N]')
+ SUBSTRING('[METÄ°N]',[INDEX],[UZUNLUK])
+ CHARINDEX('[KARAKTER]','[METÄ°N]')
+ REVERSE('[METÄ°N]')
+ REPLACE('[METÄ°N]','[ARANAN_DEÄžER]','[YENÄ°_DEÄžER]')
 
 
---Örnek - LOWER 
+--Ã–rnek - LOWER 
 
 SELECT LOWER('AbdulMelik')
 
--- Örnek - LOWER Çýktý
+-- Ã–rnek - LOWER Ã‡Ä±ktÄ±
 /*
 |(No column name)|
 | abdulmelik     |
 */
 
---Örnek - UPPER 
+--Ã–rnek - UPPER 
 
 SELECT UPPER('AbdulMelik')
 
--- Örnek - UPPER Çýktý
+-- Ã–rnek - UPPER Ã‡Ä±ktÄ±
 /*
 |(No column name)|
-| ABDULMELÝK     |
+| ABDULMELÄ°K     |
 */
---Örnek - LEFT 
+--Ã–rnek - LEFT 
 SELECT LEFT('Abdulmelik',5)
 
--- Örnek - LEFT Çýktý
+-- Ã–rnek - LEFT Ã‡Ä±ktÄ±
 /*
 |(No column name)|
 | Abdul          |
 */
---Örnek - RIGHT 
+--Ã–rnek - RIGHT 
 SELECT RIGHT('Abdulmelik',5)
 
--- Örnek - RIGHT Çýktý
+-- Ã–rnek - RIGHT Ã‡Ä±ktÄ±
 /*
 |(No column name)|
 | melik          |
 */
---Örnek - LTRIM 
+--Ã–rnek - LTRIM 
 
 SELECT LTRIM('  Abdulmelik  ')
 
--- Örnek - LTRIM Çýktý
+-- Ã–rnek - LTRIM Ã‡Ä±ktÄ±
 /*
 |(No column name)|
 | Abdulmelik     |
 
 */
 
---Örnek - RTRIM 
+--Ã–rnek - RTRIM 
 
 SELECT RTRIM('  Abdulmelik  ') 
 
--- Örnek - RTRIM Çýktý
+-- Ã–rnek - RTRIM Ã‡Ä±ktÄ±
 /*
 |(No column name)|
 |   Abdulmelik   |
 
 */
---Örnek - SUBSTRING 
+--Ã–rnek - SUBSTRING 
 
 SELECT SUBSTRING('Abdulmelik',2,4) 
 
--- Örnek - SUBSTRING Çýktý
+-- Ã–rnek - SUBSTRING Ã‡Ä±ktÄ±
 /*
 |(No column name)|
 |   bdul         |
 
 */
---Örnek - CHARINDEX 
+--Ã–rnek - CHARINDEX 
 
 SELECT CHARINDEX('u','Abdulmelik') 
 
--- Örnek - CHARINDEX Çýktý
+-- Ã–rnek - CHARINDEX Ã‡Ä±ktÄ±
 /*
 |(No column name)|
 |   4            |
 
 */
---Örnek - REVERSE 
+--Ã–rnek - REVERSE 
 
 SELECT REVERSE('Abdulmelik') 
 
--- Örnek - REVERSE Çýktý
+-- Ã–rnek - REVERSE Ã‡Ä±ktÄ±
 /*
 |(No column name)|
 |   kilemludbA   |
 
 */
---Örnek - REPLACE 
+--Ã–rnek - REPLACE 
 
 SELECT REPLACE('Fatih Sultan Yavuz','Yavuz','Mehmet') 
 
--- Örnek - REPLACE Çýktý
+-- Ã–rnek - REPLACE Ã‡Ä±ktÄ±
 /*
 |(No column name)         |
 |   Fatih Sultan Mehmet   |

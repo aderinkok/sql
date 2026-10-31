@@ -1,23 +1,23 @@
---syntax
+ï»¿--syntax
 
 CREATE [TUR] [NESNE_ADI] [PARAMETRELER]
 
 
 
---VERİTABANI Oluşturma - 1 
+--VERÄ°TABANI OluÅŸturma - 1 
 
 CREATE DATABASE Yeni 
 
---VERİTABANI Oluşturma - 1 - Çıktı 
+--VERÄ°TABANI OluÅŸturma - 1 - Ã‡Ä±ktÄ± 
 /*
   Commands completed successfully.
 
-Veritabanı mevcut değilse yukarıdaki gibi çıktı verir ve veritabanını varsayılan yapılandırma ile oluşturur. Ancak veritabanı daha önceden eklenmişse aşağıdaki gibi çıktı verecektir.
+VeritabanÄ± mevcut deÄŸilse yukarÄ±daki gibi Ã§Ä±ktÄ± verir ve veritabanÄ±nÄ± varsayÄ±lan yapÄ±landÄ±rma ile oluÅŸturur. Ancak veritabanÄ± daha Ã¶nceden eklenmiÅŸse aÅŸaÄŸÄ±daki gibi Ã§Ä±ktÄ± verecektir.
 
  Database 'Yeni' already exists. Choose a different database name.
 */
 
---VERİTABANI Oluşturma - 2 
+--VERÄ°TABANI OluÅŸturma - 2 
 
 CREATE DATABASE Yeni2
 ON
@@ -28,57 +28,57 @@ Size=9,
 Filegrowth=3
 )
 
---VERİTABANI Oluşturma - 2 - Çıktı 
+--VERÄ°TABANI OluÅŸturma - 2 - Ã‡Ä±ktÄ± 
 /*
   Commands completed successfully.
 
-Veritabanı mevcut değilse yukarıdaki gibi çıktı verir ve veritabanını varsayılan yapılandırma ile oluşturur. Ancak veritabanı daha önceden eklenmişse aşağıdaki gibi çıktı verecektir.
+VeritabanÄ± mevcut deÄŸilse yukarÄ±daki gibi Ã§Ä±ktÄ± verir ve veritabanÄ±nÄ± varsayÄ±lan yapÄ±landÄ±rma ile oluÅŸturur. Ancak veritabanÄ± daha Ã¶nceden eklenmiÅŸse aÅŸaÄŸÄ±daki gibi Ã§Ä±ktÄ± verecektir.
 
  Database 'Yeni2' already exists. Choose a different database name.
 
-NAME: SQL Server veritabanımıza başvurduğunda bu ismi kullanır. İsim uniqe(benzersiz) olmak zorundadır.
-FILENAME: Veritabanımızın kaydedileceği yolu ifade eder.
-SIZE: Veritabanınızın ilk boyutu
-MAXSIZE: Veritabanınızın en fazla ulaşabileceği boyut, MB cinsinden değeri ifade eder.
-FILEGROWTH: Yeterli boşluk kalmadığında veritabanınızın genişleme miktarı, MB cinsinden değeri ifade eder.
+NAME: SQL Server veritabanÄ±mÄ±za baÅŸvurduÄŸunda bu ismi kullanÄ±r. Ä°sim uniqe(benzersiz) olmak zorundadÄ±r.
+FILENAME: VeritabanÄ±mÄ±zÄ±n kaydedileceÄŸi yolu ifade eder.
+SIZE: VeritabanÄ±nÄ±zÄ±n ilk boyutu
+MAXSIZE: VeritabanÄ±nÄ±zÄ±n en fazla ulaÅŸabileceÄŸi boyut, MB cinsinden deÄŸeri ifade eder.
+FILEGROWTH: Yeterli boÅŸluk kalmadÄ±ÄŸÄ±nda veritabanÄ±nÄ±zÄ±n geniÅŸleme miktarÄ±, MB cinsinden deÄŸeri ifade eder.
 */
 
 
---TABLO oluşturma - 1 
-CREATE TABLE [Tablo Adı]
+--TABLO oluÅŸturma - 1 
+CREATE TABLE [Tablo AdÄ±]
 (
 Id INT PRIMARY KEY Identity(2,4),
 metin VARCHAR(50)
 )
 
---TABLO oluşturma - 1 - Çıktı 
+--TABLO oluÅŸturma - 1 - Ã‡Ä±ktÄ± 
 /*
   Commands completed successfully.
 
-Tablo ilgili veritabanında mevcut değilse yukarıdaki gibi çıktı verir ve tabloyu oluşturur. Ancak tablo daha önceden eklenmişse aşağıdaki gibi çıktı verecektir.
+Tablo ilgili veritabanÄ±nda mevcut deÄŸilse yukarÄ±daki gibi Ã§Ä±ktÄ± verir ve tabloyu oluÅŸturur. Ancak tablo daha Ã¶nceden eklenmiÅŸse aÅŸaÄŸÄ±daki gibi Ã§Ä±ktÄ± verecektir.
 
- There is already an object named 'Tablo Adı' in the database.
+ There is already an object named 'Tablo AdÄ±' in the database.
 
 */
 
---TABLO oluşturma - 2 
+--TABLO oluÅŸturma - 2 
 
 CREATE TABLE personel(
 
-   id   INT  IDENTITY(1,1) NOT NULL,
+   id   INT  IDENTITY(1,1) NOT NULL,
    ad NVARCHAR (20) NOT NULL,     
    soyad NVARCHAR (20), 
-   unvan  NVARCHAR (20) ,      
+   unvan  NVARCHAR (20) ,      
    PRIMARY KEY (id)
 )
---TABLO oluşturma - 2 - Çıktı 
+--TABLO oluÅŸturma - 2 - Ã‡Ä±ktÄ± 
 /*
   Commands completed successfully.
 
-Tablo ilgili veritabanında mevcut değilse yukarıdaki gibi çıktı verir ve tabloyu oluşturur. Ancak tablo daha önceden eklenmişse aşağıdaki gibi çıktı verecektir.
+Tablo ilgili veritabanÄ±nda mevcut deÄŸilse yukarÄ±daki gibi Ã§Ä±ktÄ± verir ve tabloyu oluÅŸturur. Ancak tablo daha Ã¶nceden eklenmiÅŸse aÅŸaÄŸÄ±daki gibi Ã§Ä±ktÄ± verecektir.
 
  There is already an object named 'personel' in the database.
 
- - IDENTITY(1,1) yazımında ilk sayı başlangıç değerini, ikinci sayı ise artış miktarını ifade etmektedir. 
- - NOT NULL ifadesi kolon değerinin boş bırakılamayacağı anlamını taşımaktadır. Eğer NOT NULL ifadesi kullanılmazsa kolon NULL değer alabilir yani ilgili alan boş bırakılabilir.
+ - IDENTITY(1,1) yazÄ±mÄ±nda ilk sayÄ± baÅŸlangÄ±Ã§ deÄŸerini, ikinci sayÄ± ise artÄ±ÅŸ miktarÄ±nÄ± ifade etmektedir. 
+ - NOT NULL ifadesi kolon deÄŸerinin boÅŸ bÄ±rakÄ±lamayacaÄŸÄ± anlamÄ±nÄ± taÅŸÄ±maktadÄ±r. EÄŸer NOT NULL ifadesi kullanÄ±lmazsa kolon NULL deÄŸer alabilir yani ilgili alan boÅŸ bÄ±rakÄ±labilir.
 */

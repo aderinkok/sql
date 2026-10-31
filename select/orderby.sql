@@ -1,40 +1,40 @@
--- Syntax 
+ï»¿-- Syntax 
 SELECT [KOLONLAR] FROM [TABLO_ADI] ORDER BY [KOLON_ADI] 
 SELECT [KOLONLAR] FROM [TABLO_ADI] ORDER BY [KOLON_ADI] DESC, [KOLON2] ASC
 SELECT [KOLONLAR] FROM [TABLO_ADI] ORDER BY [KOLON_ADI] ASC
 
--- ORDER BY ifadesinden sonra yer alan [KOLON_ADI] sütunu referans alýnarak sýralama gerçekleþtirilir.
--- ORDER BY [KOLON_ADI] þeklinde kullanýlýrsa varsayýlan olarak ASC (Ascending - Artan) olarak sýralar.
--- ORDER BY [KOLON_ADI] DESC (Descending - Azalan) þeklinde kullanýlýrsa ilgili kolonun deðerini en yüksekten en düþüðe doðru sýralar.
+-- ORDER BY ifadesinden sonra yer alan [KOLON_ADI] sÃ¼tunu referans alÄ±narak sÄ±ralama gerÃ§ekleÅŸtirilir.
+-- ORDER BY [KOLON_ADI] ÅŸeklinde kullanÄ±lÄ±rsa varsayÄ±lan olarak ASC (Ascending - Artan) olarak sÄ±ralar.
+-- ORDER BY [KOLON_ADI] DESC (Descending - Azalan) ÅŸeklinde kullanÄ±lÄ±rsa ilgili kolonun deÄŸerini en yÃ¼ksekten en dÃ¼ÅŸÃ¼ÄŸe doÄŸru sÄ±ralar.
 /*
 | id | ad        | soyad     | yas |
-|  1 | Ali       | Yýlmaz    |  19 |
+|  1 | Ali       | YÄ±lmaz    |  19 |
 |  2 | Ahmet     | Mutlu     |  18 |
-|  3 | Sare      | Aygün     |  21 |
-|  4 | Ayþe      | Demir     |  25 |
-|  5 | Abdulmelik| Derinkök  |  40 |
+|  3 | Sare      | AygÃ¼n     |  21 |
+|  4 | AyÅŸe      | Demir     |  25 |
+|  5 | Abdulmelik| DerinkÃ¶k  |  40 |
 */
--- Örnek – 1
+-- Ã–rnek â€“ 1
 
 SELECT * FROM kullanici ORDER BY yas
 SELECT * FROM kullanici ORDER BY yas ASC
-/* Örnek - 1 Çýktý 
+/* Ã–rnek - 1 Ã‡Ä±ktÄ± 
 | id | ad        | soyad     | yas |
 |  2 | Ahmet     | Mutlu     |  18 |
-|  1 | Ali       | Yýlmaz    |  19 |
-|  3 | Sare      | Aygün     |  21 |
-|  4 | Ayþe      | Demir     |  25 |
-|  5 | Abdulmelik| Derinkök  |  40 |
+|  1 | Ali       | YÄ±lmaz    |  19 |
+|  3 | Sare      | AygÃ¼n     |  21 |
+|  4 | AyÅŸe      | Demir     |  25 |
+|  5 | Abdulmelik| DerinkÃ¶k  |  40 |
 */
--- Örnek – 2
+-- Ã–rnek â€“ 2
 
 SELECT * FROM kullanici ORDER BY yas DESC
-/* Örnek - 1 Çýktý
+/* Ã–rnek - 1 Ã‡Ä±ktÄ±
 | id | ad        | soyad     | yas |
-|  5 | Abdulmelik| Derinkök  |  40 |
-|  4 | Ayþe      | Demir     |  25 |
-|  3 | Sare      | Aygün     |  21 |
-|  1 | Ali       | Yýlmaz    |  19 |
+|  5 | Abdulmelik| DerinkÃ¶k  |  40 |
+|  4 | AyÅŸe      | Demir     |  25 |
+|  3 | Sare      | AygÃ¼n     |  21 |
+|  1 | Ali       | YÄ±lmaz    |  19 |
 |  2 | Ahmet     | Mutlu     |  18 |
 */
 

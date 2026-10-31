@@ -1,41 +1,41 @@
--- Syntax for SQL Server and Azure SQL Database  
+ï»¿-- Syntax for SQL Server and Azure SQL Database  
 
 SELECT [KOLONLAR] FROM [TABLO_ADI]
 
 -- Ogrenciler tablosu 
 /*
 | id | ad  | soyad  | yas |
-|  1 | Ali | Yýlmaz |  19 |
-|  2 | Ayþe| Demir  |  20 |
+|  1 | Ali | YÄ±lmaz |  19 |
+|  2 | AyÅŸe| Demir  |  20 |
 */
--- Örnek – 1
+-- Ã–rnek â€“ 1
 
 SELECT * FROM ogrenciler
 
-/* Örnek - 1 Çýktý
+/* Ã–rnek - 1 Ã‡Ä±ktÄ±
 | id | ad  | soyad  | yas |
-|  1 | Ali | Yýlmaz |  19 |
-|  2 | Ayþe| Demir  |  20 |
+|  1 | Ali | YÄ±lmaz |  19 |
+|  2 | AyÅŸe| Demir  |  20 |
 */
 
--- Örnek – 2
+-- Ã–rnek â€“ 2
 
 SELECT ad,soyad,yas FROM ogrenciler
 
-/* Örnek - 2 Çýktý
+/* Ã–rnek - 2 Ã‡Ä±ktÄ±
 | ad  | soyad  | yas |
-| Ali | Yýlmaz |  19 |
-| Ayþe| Demir  |  20 |
+| Ali | YÄ±lmaz |  19 |
+| AyÅŸe| Demir  |  20 |
 */
 
--- Örnek – 3
+-- Ã–rnek â€“ 3
 
 SELECT id FROM ogrenciler
 
-/* Örnek - 3 Çýktý
+/* Ã–rnek - 3 Ã‡Ä±ktÄ±
 | id |
 |  1 |
 |  2 |
 */
 
--- NOT: * ifadesi tüm kolonlarý/sütunlarý kapsamaktadýr.
+-- NOT: * ifadesi tÃ¼m kolonlarÄ±/sÃ¼tunlarÄ± kapsamaktadÄ±r.

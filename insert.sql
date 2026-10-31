@@ -1,65 +1,65 @@
---Syntax
+ï»¿--Syntax
 
---1. kullanım
+--1. kullanÄ±m
 INSERT [TABLO_ADI] VALUES ([Veri1],[Veri2],[Veri3],...,[VeriN])
---2. kullanım
+--2. kullanÄ±m
 INSERT INTO [TABLO_ADI] VALUES ([Veri1],[Veri2],[Veri3],...,[VeriN])
---3. kullanım
+--3. kullanÄ±m
 INSERT [TABLO_ADI] ([Kolon1],[Kolon2],[Kolon3],...,[KolonN]) VALUES ([Veri1],[Veri2],[Veri3],...,[VeriN])
---4. kullanım
+--4. kullanÄ±m
 INSERT [TABLO_ADI] ([Kolon1],[Kolon2]) VALUES ([Veri1],[Veri2])
---5. kullanım
+--5. kullanÄ±m
 INSERT [TABLO_ADI] VALUES ([Veri1],[Veri2],[Veri3],...,[VeriN]),([2Veri1],[2Veri2],[2Veri3],...,[2VeriN]),...,([nVeri1],[nVeri2],[nVeri3],...,[nVeriN])
 
 /*
-1. kullanımda VALUES alanından sonra parantez içinde tablodaki kolon sıralamasına göre eklenmesi istenen veriler virgül ile ayrılarak belirtilir.
-Bir ve beşinci kullanımlarda olduğu gibi "VALUES" ifadesinden önce kolon ad veya adları belirtilmemişse tüm kolonlar için değer belirtilmelidir.
-2. kullanımda birinciden farklı olarak "INTO" ifadesi bulunmaktadır. Ancak T-SQL syntax'ı için opsiyonel bir ifadedir yani kullanılması veya
-kullanılmaması durumu işlemi etkilememektedir. Üçüncü kullanımda [TABLO_ADI] ifadesinden sonra parantez içinde kolon adı veya adları belirtilerek
-yalnızca belirtilen kolonlara veri girişi yapılabilir. Dördüncü kullanımda üçüncü ile aynı ifadeyi temsil etmektedir yalnızca veri girişi yapılacak
-kolon sayısı farklıdır. Beşinci kullanım şeklinde birden fazla satır ekleme işlemi yapılmaktadır. "VALUES" ifadesinden sonra parantez içinde veriler 
-belirtilip parantez kapatıldıktan sonra virgül ile 2, 3, 4 ... n adet satır aynı kod ile eklenebilmektedir.
+1. kullanÄ±mda VALUES alanÄ±ndan sonra parantez iÃ§inde tablodaki kolon sÄ±ralamasÄ±na gÃ¶re eklenmesi istenen veriler virgÃ¼l ile ayrÄ±larak belirtilir.
+Bir ve beÅŸinci kullanÄ±mlarda olduÄŸu gibi "VALUES" ifadesinden Ã¶nce kolon ad veya adlarÄ± belirtilmemiÅŸse tÃ¼m kolonlar iÃ§in deÄŸer belirtilmelidir.
+2. kullanÄ±mda birinciden farklÄ± olarak "INTO" ifadesi bulunmaktadÄ±r. Ancak T-SQL syntax'Ä± iÃ§in opsiyonel bir ifadedir yani kullanÄ±lmasÄ± veya
+kullanÄ±lmamasÄ± durumu iÅŸlemi etkilememektedir. ÃœÃ§Ã¼ncÃ¼ kullanÄ±mda [TABLO_ADI] ifadesinden sonra parantez iÃ§inde kolon adÄ± veya adlarÄ± belirtilerek
+yalnÄ±zca belirtilen kolonlara veri giriÅŸi yapÄ±labilir. DÃ¶rdÃ¼ncÃ¼ kullanÄ±mda Ã¼Ã§Ã¼ncÃ¼ ile aynÄ± ifadeyi temsil etmektedir yalnÄ±zca veri giriÅŸi yapÄ±lacak
+kolon sayÄ±sÄ± farklÄ±dÄ±r. BeÅŸinci kullanÄ±m ÅŸeklinde birden fazla satÄ±r ekleme iÅŸlemi yapÄ±lmaktadÄ±r. "VALUES" ifadesinden sonra parantez iÃ§inde veriler 
+belirtilip parantez kapatÄ±ldÄ±ktan sonra virgÃ¼l ile 2, 3, 4 ... n adet satÄ±r aynÄ± kod ile eklenebilmektedir.
 
-NOT: Eğer kolon değeri NOT NULL şeklinde ayarlanmış ise mutlaka değer girilmelidir.
-NOT2: Otomatik artan Identity/Primary Key olarak belirlenmiş kolonlara değer girişi yapılmaz.
-NOT3: T-SQL'de tek INSERT ifadesi ile en fazla 1000 satır veri eklenebilmektedir.
+NOT: EÄŸer kolon deÄŸeri NOT NULL ÅŸeklinde ayarlanmÄ±ÅŸ ise mutlaka deÄŸer girilmelidir.
+NOT2: Otomatik artan Identity/Primary Key olarak belirlenmiÅŸ kolonlara deÄŸer giriÅŸi yapÄ±lmaz.
+NOT3: T-SQL'de tek INSERT ifadesi ile en fazla 1000 satÄ±r veri eklenebilmektedir.
 
 
 
  - ogrenciler tablosu
 
 | id | ad            | soyad      | sinif | vize | final |
-|  1 | Ali           | Yılmaz     |  1    | 65   | 82    |
+|  1 | Ali           | YÄ±lmaz     |  1    | 65   | 82    |
 |  2 | Ahmet         | Mutlu      |  1    | 30   | 45    |
-|  3 | Asel Sare     | Aygün      |  2    | 85   | 79    |
-|  4 | Ayşe          | Demir      |  2    | 55   | 63    |
-|  5 | Abdulmelik    | Derinkök   |  2    | 100  | 100   |
-|  6 | Muhammed Yağız| Mutlu      |  2    | 95   | 68    |
-|  7 | Elif Eylül    | Mutlu      |  2    | 90   | 90    |
+|  3 | Asel Sare     | AygÃ¼n      |  2    | 85   | 79    |
+|  4 | AyÅŸe          | Demir      |  2    | 55   | 63    |
+|  5 | Abdulmelik    | DerinkÃ¶k   |  2    | 100  | 100   |
+|  6 | Muhammed YaÄŸÄ±z| Mutlu      |  2    | 95   | 68    |
+|  7 | Elif EylÃ¼l    | Mutlu      |  2    | 90   | 90    |
 
 
 */
 
---Örnek - 1
-INSERT ogrenciler VALUES('Uğur','Erdem',1,68,92)
+--Ã–rnek - 1
+INSERT ogrenciler VALUES('UÄŸur','Erdem',1,68,92)
 
--- Örnek - 1 Çıktı
+-- Ã–rnek - 1 Ã‡Ä±ktÄ±
 /*
 
 (1 row affected)
- -- Tablo olarak çıktı vermez ancak bilgi mesajı olarak etkilenen satır sayısını yazdırır.
+ -- Tablo olarak Ã§Ä±ktÄ± vermez ancak bilgi mesajÄ± olarak etkilenen satÄ±r sayÄ±sÄ±nÄ± yazdÄ±rÄ±r.
 
- İşlemden sonra ogrenciler tablosu:
+ Ä°ÅŸlemden sonra ogrenciler tablosu:
 
 | id | ad            | soyad      | sinif | vize | final |
-|  1 | Ali           | Yılmaz     |  1    | 65   | 82    |
+|  1 | Ali           | YÄ±lmaz     |  1    | 65   | 82    |
 |  2 | Ahmet         | Mutlu      |  1    | 30   | 45    |
-|  3 | Asel Sare     | Aygün      |  2    | 85   | 79    |
-|  4 | Ayşe          | Demir      |  2    | 55   | 63    |
-|  5 | Abdulmelik    | Derinkök   |  2    | 100  | 100   |
-|  6 | Muhammed Yağız| Mutlu      |  2    | 95   | 68    |
-|  7 | Elif Eylül    | Mutlu      |  2    | 68   | 92    |
-|  8 | Uğur          | Erdem      |  1    | 90   | 90    |
+|  3 | Asel Sare     | AygÃ¼n      |  2    | 85   | 79    |
+|  4 | AyÅŸe          | Demir      |  2    | 55   | 63    |
+|  5 | Abdulmelik    | DerinkÃ¶k   |  2    | 100  | 100   |
+|  6 | Muhammed YaÄŸÄ±z| Mutlu      |  2    | 95   | 68    |
+|  7 | Elif EylÃ¼l    | Mutlu      |  2    | 68   | 92    |
+|  8 | UÄŸur          | Erdem      |  1    | 90   | 90    |
 
 
 

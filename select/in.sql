@@ -1,33 +1,33 @@
--- Syntax 
+ï»¿-- Syntax 
 SELECT [KOLONLAR] FROM [TABLO_ADI] WHERE [KOLON_ADI] IN([veri1],[veri2],[veri3],[veriN])
 
--- IN() ifadesi yalnýzca metinsel iþlemlerde kullanýlmayabilirde. 
--- IN() ifadesi içerisine yazýlan ifadeler ayný veri türünden olmalýdýr.
+-- IN() ifadesi yalnÄ±zca metinsel iÅŸlemlerde kullanÄ±lmayabilirde. 
+-- IN() ifadesi iÃ§erisine yazÄ±lan ifadeler aynÄ± veri tÃ¼rÃ¼nden olmalÄ±dÄ±r.
 -- kullanici tablosu 
 /*
 | id | ad        | soyad     | yas |
-|  1 | Ali       | Yýlmaz    |  19 |
+|  1 | Ali       | YÄ±lmaz    |  19 |
 |  2 | Ahmet     | Mutlu     |  18 |
-|  3 | Sare      | Aygün     |  21 |
-|  4 | Ayþe      | Demir     |  25 |
-|  5 | Abdulmelik| Derinkök  |  40 |
+|  3 | Sare      | AygÃ¼n     |  21 |
+|  4 | AyÅŸe      | Demir     |  25 |
+|  5 | Abdulmelik| DerinkÃ¶k  |  40 |
 */
--- Örnek – 1
+-- Ã–rnek â€“ 1
 
 SELECT * FROM kullanici WHERE ad IN('Sare','Abdulmelik')
-/* Örnek - 1 Çýktý
+/* Ã–rnek - 1 Ã‡Ä±ktÄ±
 | id | ad        | soyad     | yas |
-|  3 | Sare      | Aygün     |  21 |
-|  5 | Abdulmelik| Derinkök  |  40 |
+|  3 | Sare      | AygÃ¼n     |  21 |
+|  5 | Abdulmelik| DerinkÃ¶k  |  40 |
 */
--- Örnek – 2
+-- Ã–rnek â€“ 2
 
 SELECT * FROM kullanici WHERE yas IN(18,19,40)
-/* Örnek - 1 Çýktý
+/* Ã–rnek - 1 Ã‡Ä±ktÄ±
 | id | ad        | soyad     | yas |
-|  1 | Ali       | Yýlmaz    |  19 |
+|  1 | Ali       | YÄ±lmaz    |  19 |
 |  2 | Ahmet     | Mutlu     |  18 |
-|  5 | Abdulmelik| Derinkök  |  40 |
+|  5 | Abdulmelik| DerinkÃ¶k  |  40 |
 */
 
 
